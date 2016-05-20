@@ -7,16 +7,13 @@ import org.mdev.revolution.Revolution;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SessionManager {
-    private ConcurrentHashMap<Channel, Session> sessions;
+    private final ConcurrentHashMap<Channel, Session> sessions;
 
     public SessionManager() {
         sessions = new ConcurrentHashMap<>();
     }
 
     public Session getSessionByChannel(Channel channel) {
-        if (!sessions.containsKey(channel))
-            return null;
-
         return sessions.get(channel);
     }
 
@@ -26,10 +23,9 @@ public class SessionManager {
 
     public void addSession(Channel channel) {
         Session session = new Session(channel);
-
-        if (sessions.containsKey(channel))
+        if (sessions.containsKey(channel)) {
             session.disconnect();
-
+        }
         sessions.put(channel, session);
     }
 

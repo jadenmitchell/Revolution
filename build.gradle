@@ -17,10 +17,8 @@ dependencies {
 
     // DEPENDENCY INJECTION
     compile group: 'com.google.inject', name: 'guice', version: '4.0'
-
     compile group: 'com.netflix.governator', name: 'governator', version: '1.12.13'
     compile group: 'com.netflix.governator', name: 'governator-archaius', version: '1.12.13'
-
     compile group: 'com.mycila.guice.extensions', name: 'mycila-guice-jsr250', version: '3.2.ga'
     compile group: 'com.mycila.guice.extensions', name: 'mycila-guice-closeable', version: '3.6.ga'
 
