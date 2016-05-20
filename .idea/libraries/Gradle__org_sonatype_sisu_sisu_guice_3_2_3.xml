@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.sonatype.sisu:sisu-guice:3.2.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.sonatype.sisu/sisu-guice/3.2.3/456934c66d88c65e71b364ba4218f3b580c26f9a/sisu-guice-3.2.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.sonatype.sisu/sisu-guice/3.2.3/59161b85d0b432dbe54a5a51b53daa2d2a00b1c1/sisu-guice-3.2.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
