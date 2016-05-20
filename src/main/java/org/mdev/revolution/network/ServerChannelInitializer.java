@@ -28,9 +28,9 @@ public class ServerChannelInitializer extends ChannelInitializer<SocketChannel> 
         ch.config().setTrafficClass(0x18);
 
         ch.pipeline().addLast("loggingHandler", new LoggingHandler(LogLevel.DEBUG))
-                .addLast("policyDecoder", new XMLPolicyDecoder())
                 .addLast("stringEncoder", new StringEncoder(CharsetUtil.UTF_8))
                 .addLast("packetEncoder", new PacketEncoder())
+                .addLast("policyDecoder", new XMLPolicyDecoder())
                 .addLast("packetDecoder", new PacketDecoder())
                 .addLast(eventExecutor, "channelHandler", ServerChannelHandler.INSTANCE);
 

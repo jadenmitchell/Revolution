@@ -30,7 +30,7 @@ public class PacketEventTask implements Runnable {
                 logger.trace("[" + Revolution.getInstance().getPacketManager().getDeclaringClass(packet.getHeader()) + "] Time taken to execute packet: " + elapsed);
             }
             logger.debug("[" + Revolution.getInstance().getPacketManager().getDeclaringClass(packet.getHeader()) + "] Executed Packet: " + packet.getHeader());
-            //cleanup();
+            cleanup();
         } catch (NullPointerException e) {
             logger.error("Could not find method associated with packet header.", e);
             e.printStackTrace();
@@ -40,7 +40,7 @@ public class PacketEventTask implements Runnable {
         }
     }
 
-    public void cleanup() {
+    protected void cleanup() {
         session = null;
         packet = null;
         System.gc();

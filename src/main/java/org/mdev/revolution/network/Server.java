@@ -2,6 +2,7 @@ package org.mdev.revolution.network;
 
 import com.google.inject.Singleton;
 import io.netty.bootstrap.ServerBootstrap;
+import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.*;
 import io.netty.channel.epoll.Epoll;
 import io.netty.channel.epoll.EpollChannelOption;
@@ -56,19 +57,6 @@ public class Server {
             ports.add(Integer.parseInt(port));
         }
 
-        /*if (ports.size() > MAX_CONNECTION_PORTS) {
-            logger.error("Server ports have exceeded it's maximum capacity:\n   MAX_CONNECTION_PORTS: {}\n   CONNECTION_PORTS: {}\n   ports[]: {}",
-                    MAX_CONNECTION_PORTS,
-                    ports.size(),
-                    ports);
-            while (ports.size() <= MAX_CONNECTION_PORTS) {
-                int p = ports.get(ports.size() + 1);
-                ports.remove(p);
-            }
-            logger.debug("Modified the connection ports to the allowed amount" +
-                    "\n   ports[]: " + String.valueOf(ports));
-        }*/
-
         channels = new DefaultChannelGroup("tcp-server", GlobalEventExecutor.INSTANCE);
     }
 
@@ -79,7 +67,6 @@ public class Server {
 
         int defaultNumWorkers = Integer.parseInt(System.getProperty("io.netty.eventLoopThreads", "0"));
         int groupThreadCount = defaultNumWorkers > 0 ? defaultNumWorkers : Runtime.getRuntime().availableProcessors() * 2; // +1?
-        //int ioGroupThreadCount =  acceptGroupThreadCount;
         boolean epollEnabled = Revolution.getConfig().getString("network.epoll").equals("true");
         boolean epollAvailable = Epoll.isAvailable();
 
@@ -102,8 +89,14 @@ public class Server {
                 .group(bossGroup, workerGroup)
                 .channel(epollEnabled && epollAvailable ? EpollServerSocketChannel.class : NioServerSocketChannel.class)
                 .option(ChannelOption.SO_BACKLOG, 500)
+                .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 10000)
+                .childOption(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT)
+                .childOption(ChannelOption.SO_REUSEADDR, true)
+                .childOption(ChannelOption.SO_RCVBUF, 5120)
+                .childOption(ChannelOption.RCVBUF_ALLOCATOR, new FixedRecvByteBufAllocator(5120))
                 .childOption(ChannelOption.TCP_NODELAY, true)
                 .childOption(ChannelOption.SO_KEEPALIVE, true)
+                .childOption(ChannelOption.WRITE_BUFFER_WATER_MARK, new WriteBufferWaterMark(8 * 1024, 32 * 1024))
                 .childHandler(new ServerChannelInitializer(GlobalEventExecutor.INSTANCE));
 
         if (epollEnabled && epollAvailable) {

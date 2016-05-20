@@ -71,7 +71,7 @@ public class PacketManager {
             return;
         }
         logger.debug("Executing packet: " + getDeclaringClass(packet.getHeader()) + " [ID " + packet.getHeader() + "]");
-        threadPool.submit(new PacketEventTask(session, packet));
+        //threadPool.submit(new PacketEventTask(session, packet));
     }
 
     public String getDeclaringClass(short header) {

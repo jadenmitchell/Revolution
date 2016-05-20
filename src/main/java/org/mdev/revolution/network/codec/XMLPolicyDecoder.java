@@ -16,14 +16,14 @@ public class XMLPolicyDecoder extends MessageToMessageDecoder<ByteBuf> {
 
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf buffer, List<Object> out) throws Exception {
-        out.add(buffer.copy());
-
         // less than 5 bytes == garbage data
         if (buffer.readableBytes() < 5) {
             return;
         }
 
         char delimiter = (char)buffer.readByte();
+
+        buffer.resetReaderIndex();
 
         if (delimiter == '<') {
             String policy = "<?xml version=\"1.0\"?>\r\n"
@@ -33,8 +33,11 @@ public class XMLPolicyDecoder extends MessageToMessageDecoder<ByteBuf> {
                     + "</cross-domain-policy>\0";
 
             ctx.writeAndFlush(Unpooled.copiedBuffer(policy.getBytes()).retain()).addListener(ChannelFutureListener.CLOSE);
+        }
+        else {
             ctx.pipeline().remove(this);
-            ctx.fireChannelReadComplete();
+            PacketDecoder decoder = ctx.pipeline().get(PacketDecoder.class);
+            decoder.decode(ctx, buffer, out);
         }
     }
 }

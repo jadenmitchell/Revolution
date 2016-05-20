@@ -16,7 +16,7 @@ public class PacketDecoder extends MessageToMessageDecoder<ByteBuf> {
 
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf buffer, List<Object> out) throws Exception {
-        out.add(buffer.copy());
+        System.out.println("HELLO WORLD!");
 
         // less than 5 bytes == garbage data
         if (buffer.readableBytes() < 5) {
@@ -25,6 +25,9 @@ public class PacketDecoder extends MessageToMessageDecoder<ByteBuf> {
 
         Session session = Revolution.getInstance().getSessionManager().getSessionByChannel(ctx.channel());
         int length = buffer.readInt();
+        if (length > 5120 && (length >> 24 != 60)) {
+            ctx.close();
+        }
         short header = buffer.readShort();
         ClientPacket packet = new ClientPacket(header, length, buffer);
 
@@ -34,6 +37,6 @@ public class PacketDecoder extends MessageToMessageDecoder<ByteBuf> {
         }
 
         Revolution.getInstance().getPacketManager().invoke(session, packet);
-        ctx.fireChannelReadComplete();
+        //ctx.fireChannelReadComplete();
     }
 }
