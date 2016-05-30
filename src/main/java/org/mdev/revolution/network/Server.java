@@ -23,6 +23,8 @@ import javax.inject.Inject;
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 
 @Singleton
 public class Server {
@@ -40,6 +42,17 @@ public class Server {
 
     private String host;
     private List<Integer> ports;
+
+    private static final ThreadFactory threadFactory = new ThreadFactory() {
+        private final ThreadFactory wrapped = Executors.defaultThreadFactory();
+
+        @SuppressWarnings("NullableProblems")
+        public Thread newThread(final Runnable r) {
+            final Thread t = wrapped.newThread(r);
+            t.setDaemon(true);
+            return t;
+        }
+    };
 
     @Inject
     @Deprecated
@@ -61,16 +74,12 @@ public class Server {
     }
 
     public void start() {
-        if (channels == null) {
-            throw new IllegalStateException("Possible use of deprecated constructor to initialize a new instance of the Server.");
-        }
-
         int defaultNumWorkers = Integer.parseInt(System.getProperty("io.netty.eventLoopThreads", "0"));
         int groupThreadCount = defaultNumWorkers > 0 ? defaultNumWorkers : Runtime.getRuntime().availableProcessors() * 2; // +1?
         boolean epollEnabled = Revolution.getConfig().getString("network.epoll").equals("true");
         boolean epollAvailable = Epoll.isAvailable();
 
-        EventLoopGroup bossGroup = new NioEventLoopGroup(groupThreadCount);
+        EventLoopGroup bossGroup = new NioEventLoopGroup(groupThreadCount, threadFactory);
         EventLoopGroup workerGroup = new NioEventLoopGroup(groupThreadCount);
 
         if (epollEnabled) {
@@ -78,7 +87,7 @@ public class Server {
                 logger.error("You must be running on a Linux machine in order to use epoll!");
                 logger.debug("Using the default NIO event loop group.");
             } else {
-                bossGroup = new EpollEventLoopGroup(groupThreadCount);
+                bossGroup = new EpollEventLoopGroup(groupThreadCount, threadFactory);
                 workerGroup = new EpollEventLoopGroup(groupThreadCount);
             }
         } else if (epollAvailable) {
@@ -88,8 +97,8 @@ public class Server {
         bootstrap = new ServerBootstrap()
                 .group(bossGroup, workerGroup)
                 .channel(epollEnabled && epollAvailable ? EpollServerSocketChannel.class : NioServerSocketChannel.class)
-                .option(ChannelOption.SO_BACKLOG, 500)
-                .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 10000)
+                .option(ChannelOption.SO_BACKLOG, 1000)
+                //.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 10000)
                 .childOption(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT)
                 .childOption(ChannelOption.SO_REUSEADDR, true)
                 .childOption(ChannelOption.SO_RCVBUF, 5120)
@@ -126,8 +135,8 @@ public class Server {
     public void stop() {
         channels.flush();
         channels.close();
-        bootstrap.group().shutdownGracefully();
-        bootstrap.childGroup().shutdownGracefully();
+        bootstrap.config().group().shutdownGracefully();
+        bootstrap.config().childGroup().shutdownGracefully();
     }
 
     public ChannelGroup getChannels() {

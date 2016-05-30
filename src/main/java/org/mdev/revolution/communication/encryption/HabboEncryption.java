@@ -9,13 +9,13 @@ public class HabboEncryption {
     private static DiffieHellman diffieHellman;
 
     public static void initialize(String n, String e, String d) {
-        rsaKey = new RSAKey(new BigInteger(n, 16), new BigInteger(e, 16), new BigInteger(d, 16),
+        rsaKey = new RSAKey(new BigInteger(n, 16), new BigInteger(e), new BigInteger(d, 16),
                 BigInteger.ZERO, BigInteger.ZERO, BigInteger.ZERO, BigInteger.ZERO, BigInteger.ZERO);
         diffieHellman = new DiffieHellman();
     }
 
-    public static String toHexString(byte[] array) {
-        return DatatypeConverter.printHexBinary(array);
+    public static String toHexString(byte[] bytes) {
+        return DatatypeConverter.printHexBinary(bytes);
     }
 
     public static byte[] toByteArray(String s) {
@@ -38,7 +38,7 @@ public class HabboEncryption {
         return getRsaStringEncrypted(key);
     }
 
-    public static String GetRsaDiffieHellmanPublicKey() {
+    public static String getRsaDiffieHellmanPublicKey() {
         String key = diffieHellman.getPublicKey().toString(10);
         return getRsaStringEncrypted(key);
     }

@@ -11,6 +11,9 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorBuilderImpl;
 import org.hibernate.service.ServiceRegistry;
+import org.jooq.DSLContext;
+import org.jooq.SQLDialect;
+import org.jooq.impl.DSL;
 import org.mdev.revolution.Revolution;
 
 import javax.activation.DataSource;
@@ -79,6 +82,10 @@ public class DatabaseManager {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public DSLContext getContext() {
+        return DSL.using(getConnection(), SQLDialect.MYSQL);
     }
 
     @SuppressWarnings("unused")

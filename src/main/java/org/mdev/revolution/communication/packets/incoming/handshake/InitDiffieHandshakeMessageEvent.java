@@ -5,6 +5,7 @@ import org.mdev.revolution.communication.packets.PacketEvent;
 import org.mdev.revolution.communication.packets.incoming.ClientPacket;
 import org.mdev.revolution.communication.packets.incoming.ClientPacketHeader;
 import org.mdev.revolution.communication.packets.outgoing.handshake.InitDiffieHandshakeComposer;
+import org.mdev.revolution.network.codec.EncryptionDecoder;
 import org.mdev.revolution.network.sessions.Session;
 
 public class InitDiffieHandshakeMessageEvent {

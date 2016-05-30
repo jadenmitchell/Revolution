@@ -86,19 +86,19 @@ public class RSAKey {
     }
 
     public byte[] encrypt(byte[] src) {
-        return doEncrypt((m) -> doPublic(m), src);
+        return doEncrypt(this::doPublic, src);
     }
 
     public byte[] decrypt(byte[] src) {
-        return doDecrypt((m) -> doPublic(m), src);
+        return doDecrypt(this::doPublic, src);
     }
 
     public byte[] sign(byte[] src) {
-        return doEncrypt((m) -> doPrivate(m), src);
+        return doEncrypt(this::doPrivate, src);
     }
 
     public byte[] verify(byte[] src) {
-        return doDecrypt((m) -> doPrivate(m), src);
+        return doDecrypt(this::doPrivate, src);
     }
 
     private byte[] doEncrypt(Calculator cd, byte[] src) {
@@ -179,10 +179,6 @@ public class RSAKey {
     }
 
     protected BigInteger doPrivate(BigInteger m) {
-        if (p.equals(BigInteger.ZERO) && q.equals(BigInteger.ZERO)) {
-            return m.modPow(d, n);
-        }
-
-        return BigInteger.ZERO;
+        return m.modPow(d, n);
     }
 }

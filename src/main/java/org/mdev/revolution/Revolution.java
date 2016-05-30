@@ -63,6 +63,7 @@ public class Revolution {
         Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
 
         injector = getBootstrappedInjector();
+
         getInstance().databaseManager = new DatabaseManager();
         getInstance().databaseManager.initialize();
 
@@ -74,6 +75,7 @@ public class Revolution {
         getInstance().sessionManager = new SessionManager();
 
         getInstance().getServer().start();
+
         Thread.currentThread().setPriority(Thread.NORM_PRIORITY);
     }
 
@@ -113,7 +115,7 @@ public class Revolution {
     }
 
     public static void main(String[] args) {
-        String configFile = "./config/default.cfg.properties";
+        String configFile = "./config/revolution.properties";
 
         if (args.length > 0) {
             switch (args[0].toLowerCase().trim()) {
@@ -138,6 +140,8 @@ public class Revolution {
 
         Thread hook = new Thread(Revolution::shutdown);
         Runtime.getRuntime().addShutdownHook(hook);
+
+        while (true) {}
     }
 
     private static void shutdown() {
