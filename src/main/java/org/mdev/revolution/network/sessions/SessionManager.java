@@ -24,7 +24,8 @@ public class SessionManager {
     public void addSession(Channel channel) {
         Session session = new Session(channel);
         if (sessions.containsKey(channel)) {
-            session.disconnect();
+            Session sess = getSessionByChannel(channel);
+            sess.disconnect();
         }
         sessions.put(channel, session);
     }

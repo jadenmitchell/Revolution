@@ -4,4 +4,7 @@ public final class ClientPacketHeader {
     public static final short VersionCheckMessageEvent = 4000;//4000
     public static final short InitDiffieHandshakeMessageEvent = 316;
     public static final short CompleteDiffieHandshakeMessageEvent = 3847;
+    public static final short SSOTicketMessageEvent = 1778;
+    public static final short UniqueIDMessageEvent = 1471;
+    public static final short InfoRetrieveMessageEvent = 186;
 }

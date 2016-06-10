@@ -7,40 +7,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4714463-c123-4099-953f-b4acaeebf15a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_netty_netty_all_4_1_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encryption/SecurityUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/CompleteDiffieHandshakeMessageEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/CompleteDiffieHandshakeComposer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/notifications/HabboBroadcastMessageComposer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/notifications/MOTDNotificationComposer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/models/Player.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dictionaries/Jaden.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_netty_netty_all_4_1_0_CR7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/default.cfg.properties" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/Revolution_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/Revolution_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/Revolution_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/Revolution_test.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encoding/Base64Encoding.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encoding/WireEncoding.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/InfoRetrieveMessageEvent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/PingMessageEvent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/SSOTicketMessageEvent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/TryLoginMessageEvent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/UniqueMachineIDMessageEvent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/AuthenticationOKComposer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/UniqueIDComposer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/PlayerDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/GameThreadMonitor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/PlayerBean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/PlayerService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/monitoring/impl/LimitedThreadMonitor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RevolutionServer.log" afterPath="$PROJECT_DIR$/RevolutionServer.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradlew" afterPath="$PROJECT_DIR$/gradlew" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/Revolution.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/Revolution.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encryption/HabboEncryption.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encryption/HabboEncryption.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encryption/RSAKey.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encryption/RSAKey.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/PacketManager.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/PacketManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/ClientPacketHeader.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/ClientPacketHeader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/InitDiffieHandshakeMessageEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/InitDiffieHandshakeMessageEvent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/ServerPacketHeader.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/ServerPacketHeader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/DatabaseManager.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/DatabaseManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/Server.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/Server.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/CompleteDiffieHandshakeComposer.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/CompleteDiffieHandshakeComposer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/GenericHibernateDAO.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/GenericHibernateDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/models/Player.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/models/Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/ServerChannelHandler.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/ServerChannelHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/codec/PacketDecoder.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/codec/PacketDecoder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/codec/EncryptionDecoder.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/codec/EncryptionDecoder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/sessions/Session.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/sessions/Session.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/sessions/SessionManager.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/sessions/SessionManager.java" />
     </list>
     <ignored path="Revolution.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,84 +67,12 @@
     <favorites_list name="Revolution" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="InitDiffieHandshakeMessageEvent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/InitDiffieHandshakeMessageEvent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="12" column="73" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientPacketHeader.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/ClientPacketHeader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="65" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MOTDNotificationComposer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/notifications/MOTDNotificationComposer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerPacket.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/ServerPacket.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Session.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/sessions/Session.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerPacketHeader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/ServerPacketHeader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InitDiffieHandshakeComposer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/InitDiffieHandshakeComposer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -487,9 +406,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/DatabaseManager.java" />
-        <option value="$PROJECT_DIR$/.idea/gradle.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/ServerChannelInitializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/codec/PacketDecoder.java" />
         <option value="$PROJECT_DIR$/config/revolution.properties" />
@@ -500,13 +416,46 @@
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encryption/RSA.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encryption/HabboEncryption.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/Revolution.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/ClientPacketHeader.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/notifications/MOTDNotificationComposer.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/notifications/HabboBroadcastMessageComposer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/ServerPacketHeader.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/CompleteDiffieHandshakeMessageEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/CompleteDiffieHandshakeComposer.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/InitDiffieHandshakeMessageEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/ServerChannelHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/sessions/SessionManager.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/VersionCheckMessageEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/PacketManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/CompleteDiffieHandshakeComposer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/ClientPacketHeader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/InfoRetrieveMessageEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/UniqueIDMessageEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/UniqueMachineIDComposer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/UniqueIDComposer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/UniqueMachineIDMessageEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/TryLoginMessageEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/ServerPacketHeader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/AuthenticationOKComposer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/GameThreadManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/monitoring/impl/LimitedThreadMonitor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/GameThreadMonitor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/PlayerDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/entities/PlayerEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encoding/Base64Encoding.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encoding/WireEncoding.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/codec/EncryptionDecoder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/ComprehensiveHibernateDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/GenericHibernateDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/models/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/SSOAuthenticator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/PlayerManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/models/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/PlayerDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/GenericDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/SSOTicketMessageEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/PlayerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/PlayerBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/sessions/Session.java" />
       </list>
     </option>
@@ -525,10 +474,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="555" />
+    <option name="y" value="227" />
+    <option name="width" value="1932" />
+    <option name="height" value="820" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -555,6 +504,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -622,10 +572,6 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -679,7 +625,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="threading" />
+              <option name="myItemId" value="utilities" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -744,36 +690,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="sessions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1042,10 +958,6 @@
               <option name="myItemId" value="communication" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="encryption" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1085,9 +997,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1603,41 +1514,44 @@
       <workItem from="1464502619028" duration="5831000" />
       <workItem from="1464558631225" duration="8251000" />
       <workItem from="1464587606073" duration="296000" />
-      <workItem from="1464593040272" duration="3448000" />
+      <workItem from="1464593040272" duration="19285000" />
+      <workItem from="1464998281816" duration="2089000" />
+      <workItem from="1465007460214" duration="2211000" />
+      <workItem from="1465538538811" duration="13331000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25601000" />
+    <option name="totallyTimeSpent" value="59069000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <frame x="555" y="227" width="1932" height="820" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.50208336" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932165" sideWeight="0.49791667" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32083333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.50208336" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31138977" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1653,7 +1567,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1662,387 +1576,375 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/persistence.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encoding/Base64Encoding.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/Revolution.java">
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Regular Emulators/Private/Lime Emulator/src/main/java/info/jaden/lime/utils/WireEncoding.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jooq/jooq/3.8.2/a1a7461e1ea12753c1241a49ab762b4dc7e98946/jooq-3.8.2-sources.jar!/org/jooq/impl/DSL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3230">
-          <caret line="489" column="29" selection-start-line="489" selection-start-column="29" selection-end-line="489" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/gradle.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/DatabaseManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/models/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/GenericHibernateDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/GenericDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/codec/XMLPolicyDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/PacketEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/PacketEventTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_92/src.zip!/java/net/URLClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="357" column="5" selection-start-line="357" selection-start-column="5" selection-end-line="357" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/tmp/uberjar/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/libs/config/revolution.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/ServerChannelInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="45" column="1" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/ServerChannelHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/codec/PacketDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encryption/ARC4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        <state relative-caret-position="847">
+          <caret line="65" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
-            <element signature="e#211#212#0" expanded="false" />
-            <element signature="e#254#255#0" expanded="false" />
+            <element signature="e#951#952#0" expanded="false" />
+            <element signature="e#1011#1012#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/revolution.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encoding/WireEncoding.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.1.0.Final/d2cf9d7328f802f350be9e7dfdb0f5a76d744ccd/netty-all-4.1.0.Final-sources.jar!/io/netty/bootstrap/AbstractBootstrap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="393" column="50" selection-start-line="393" selection-start-column="50" selection-end-line="393" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1666">
-          <caret line="122" column="25" selection-start-line="122" selection-start-column="25" selection-end-line="122" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5999#6000#0" expanded="true" />
-            <element signature="e#6030#6031#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_92/src.zip!/javax/xml/bind/DatatypeConverterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6698">
-          <caret line="474" column="0" selection-start-line="474" selection-start-column="0" selection-end-line="474" selection-end-column="0" />
+        <state relative-caret-position="425">
+          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.306/Comet-Server-Protocol/src/main/java/com/cometproject/server/protocol/security/SecurityUtil.java">
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Regular Emulators/Private/Lime Emulator/src/main/java/info/jaden/lime/network/protocol/ClientMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="5" selection-start-line="3" selection-start-column="4" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#544#545#0" expanded="false" />
+            <element signature="e#601#602#0" expanded="false" />
+            <element signature="e#641#642#0" expanded="false" />
+            <element signature="e#704#705#0" expanded="false" />
+            <element signature="e#742#743#0" expanded="false" />
+            <element signature="e#795#796#0" expanded="false" />
+            <element signature="e#1218#1219#0" expanded="false" />
+            <element signature="e#1281#1282#0" expanded="false" />
+            <element signature="e#1503#1504#0" expanded="false" />
+            <element signature="e#1573#1574#0" expanded="false" />
+            <element signature="e#1776#1777#0" expanded="false" />
+            <element signature="e#1861#1862#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encryption/SecurityUtil.java">
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Regular Emulators/Private/Lime Emulator/src/main/java/info/jaden/lime/network/protocol/ServerMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="425">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#460#461#0" expanded="false" />
+            <element signature="e#537#538#0" expanded="false" />
+            <element signature="e#564#565#0" expanded="false" />
+            <element signature="e#597#598#0" expanded="false" />
+            <element signature="e#633#634#0" expanded="false" />
+            <element signature="e#671#672#0" expanded="false" />
+            <element signature="e#1040#1041#0" expanded="false" />
+            <element signature="e#1079#1080#0" expanded="false" />
+            <element signature="e#1123#1124#0" expanded="false" />
+            <element signature="e#1164#1165#0" expanded="false" />
+            <element signature="e#1337#1338#0" expanded="false" />
+            <element signature="e#1395#1396#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encryption/delegation/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.366/Comet-Server-Protocol/src/main/java/com/cometproject/server/protocol/security/exchange/RSA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_92/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8041">
-          <caret line="514" column="0" selection-start-line="514" selection-start-column="0" selection-end-line="514" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#124311#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#4677#4678#0" expanded="false" />
-            <element signature="e#4714#4715#0" expanded="false" />
-            <element signature="e#5687#5688#0" expanded="false" />
-            <element signature="e#5750#5751#0" expanded="false" />
-            <element signature="e#13098#13099#0" expanded="false" />
-            <element signature="e#13150#13151#0" expanded="false" />
-            <element signature="e#20727#20728#0" expanded="false" />
-            <element signature="e#20771#20772#0" expanded="false" />
-            <element signature="e#21961#21962#0" expanded="false" />
-            <element signature="e#22041#22042#0" expanded="false" />
-            <element signature="e#22786#22787#0" expanded="false" />
-            <element signature="e#22821#22822#0" expanded="false" />
-            <element signature="e#23072#23073#0" expanded="false" />
-            <element signature="e#23112#23113#0" expanded="false" />
-            <element signature="e#29462#29463#0" expanded="false" />
-            <element signature="e#29533#29534#0" expanded="false" />
-            <element signature="e#36393#36394#0" expanded="false" />
-            <element signature="e#36459#36460#0" expanded="false" />
-            <element signature="e#38369#38370#0" expanded="false" />
-            <element signature="e#38423#38424#0" expanded="false" />
-            <element signature="e#47538#47539#0" expanded="false" />
-            <element signature="e#47602#47603#0" expanded="false" />
-            <element signature="e#55800#55801#0" expanded="false" />
-            <element signature="e#55844#55845#0" expanded="false" />
-            <element signature="e#56437#56438#0" expanded="false" />
-            <element signature="e#56514#56515#0" expanded="false" />
-            <element signature="e#58481#58482#0" expanded="false" />
-            <element signature="e#58518#58519#0" expanded="false" />
-            <element signature="e#62860#62861#0" expanded="false" />
-            <element signature="e#62916#62917#0" expanded="false" />
-            <element signature="e#66457#66458#0" expanded="false" />
-            <element signature="e#66495#66496#0" expanded="false" />
-            <element signature="e#70749#70750#0" expanded="false" />
-            <element signature="e#70802#70803#0" expanded="false" />
-            <element signature="e#78240#78241#0" expanded="false" />
-            <element signature="e#78299#78300#0" expanded="false" />
-            <element signature="e#82616#82617#0" expanded="false" />
-            <element signature="e#82667#82668#0" expanded="false" />
-            <element signature="e#82971#82972#0" expanded="false" />
-            <element signature="e#83020#83021#0" expanded="false" />
-            <element signature="e#94598#94599#0" expanded="false" />
-            <element signature="e#94636#94637#0" expanded="false" />
-            <element signature="e#104675#104676#0" expanded="false" />
-            <element signature="e#104730#104731#0" expanded="false" />
-            <element signature="e#111196#111197#0" expanded="false" />
-            <element signature="e#111251#111252#0" expanded="false" />
-            <element signature="e#113343#113344#0" expanded="false" />
-            <element signature="e#113370#113371#0" expanded="false" />
-            <element signature="e#117893#117894#0" expanded="false" />
-            <element signature="e#117955#117956#0" expanded="false" />
-            <element signature="e#118405#118406#0" expanded="false" />
-            <element signature="e#118444#118445#0" expanded="false" />
-            <element signature="e#119456#119457#0" expanded="false" />
-            <element signature="e#119510#119511#0" expanded="false" />
-            <element signature="e#120159#120160#0" expanded="false" />
-            <element signature="e#120213#120214#0" expanded="false" />
-            <element signature="e#120482#120483#0" expanded="false" />
-            <element signature="e#120521#120522#0" expanded="false" />
-            <element signature="e#120889#120890#0" expanded="false" />
-            <element signature="e#120932#120933#0" expanded="false" />
-            <element signature="e#121727#121728#0" expanded="false" />
-            <element signature="e#121769#121770#0" expanded="false" />
-            <element signature="e#122184#122185#0" expanded="false" />
-            <element signature="e#122223#122224#0" expanded="false" />
-            <element signature="e#122645#122646#0" expanded="false" />
-            <element signature="e#122685#122686#0" expanded="false" />
-            <element signature="e#123115#123116#0" expanded="false" />
-            <element signature="e#123156#123157#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Regular Emulators/Public/Roleplay/Plus Emulator/Communication/Encryption/Crypto/RSA/RSAKey.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="146" column="0" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.674/Comet-Server-Protocol/src/main/java/com/cometproject/server/protocol/security/exchange/RSA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2006">
-          <caret line="120" column="9" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
+        <state relative-caret-position="85">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.712/azurejava/src/main/java/org/azure/communication/encryption/RSA.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encryption/RSAKey.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encryption/DiffieHellman.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1442">
-          <caret line="156" column="9" selection-start-line="156" selection-start-column="9" selection-end-line="156" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encryption/RSA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1459">
-          <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encryption/HabboEncryption.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encryption/RSAKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="847">
+          <caret line="82" column="0" selection-start-line="26" selection-start-column="19" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/codec/PacketDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.510/Comet-Server-Protocol/src/main/java/com/cometproject/server/protocol/codec/EncryptionDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Regular Emulators/Private/Comet Emulator/src/main/java/com/cometproject/server/network/codec/MessageDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/codec/EncryptionDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.691/Comet-Server/src/main/java/com/cometproject/server/game/players/login/exceptions/PlayerBannedException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.562/Comet-Server/src/main/java/com/cometproject/server/game/players/login/queue/PlayerLoginQueueManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.895/Comet-Server/src/main/java/com/cometproject/server/game/players/data/PlayerData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="93" column="14" selection-start-line="93" selection-start-column="14" selection-end-line="93" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.034/Comet-Server/src/main/java/com/cometproject/server/storage/queries/player/PlayerDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-core/5.1.0.Final/88a4d5e57ab2cb0fef12866c008c90fbb2ecde37/hibernate-core-5.1.0.Final-sources.jar!/org/hibernate/SessionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="77" column="12" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/ComprehensiveHibernateDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/SSOAuthenticator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/models/Playere.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/PlayerManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/GenericDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/sessions/SessionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.910/Comet-Server/src/main/java/com/cometproject/server/game/players/login/PlayerLoginRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="694">
+          <caret line="172" column="38" selection-start-line="172" selection-start-column="38" selection-end-line="172" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Mango Emulator/src/Mango/Players/SSOAuthenticator.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/DatabaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+          <folding>
+            <element signature="e#2681#2682#0" expanded="true" />
+            <element signature="e#2732#2733#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/utilities/HibernateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/DatabaseException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/PlayerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#591#621#0" expanded="true" />
+            <element signature="e#803#804#0" expanded="true" />
+            <element signature="e#841#842#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/PlayerBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/Revolution.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/models/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/VersionCheckMessageEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/notifications/MOTDNotificationComposer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/PlayerDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/GenericHibernateDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#523#524#0" expanded="true" />
+            <element signature="e#576#577#0" expanded="true" />
+            <element signature="e#617#618#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
+            <element signature="e#703#704#0" expanded="true" />
+            <element signature="e#755#756#0" expanded="true" />
+            <element signature="e#932#933#0" expanded="true" />
+            <element signature="e#975#976#0" expanded="true" />
+            <element signature="e#1025#1026#0" expanded="true" />
+            <element signature="e#1068#1069#0" expanded="true" />
+            <element signature="e#1116#1117#0" expanded="true" />
+            <element signature="e#1157#1158#0" expanded="true" />
+            <element signature="e#1198#1199#0" expanded="true" />
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1337#1338#0" expanded="true" />
+            <element signature="e#1411#1412#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/sessions/Session.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1583#1584#0" expanded="true" />
+            <element signature="e#1628#1629#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2055,39 +1957,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/ServerPacket.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/UniqueIDComposer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/CompleteDiffieHandshakeComposer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/CompleteDiffieHandshakeMessageEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/sessions/Session.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/AuthenticationOKComposer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="e#321#322#0" expanded="true" />
+            <element signature="e#387#388#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2099,30 +1992,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/InitDiffieHandshakeMessageEvent.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/Packet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="73" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/notifications/HabboBroadcastMessageComposer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/PacketEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#349#350#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/ClientPacketHeader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/PacketEventTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/InfoRetrieveMessageEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/PingMessageEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="65" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="65" />
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/TryLoginMessageEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/SSOTicketMessageEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/PacketManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding />
         </state>
       </provider>

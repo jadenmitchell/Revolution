@@ -2,55 +2,82 @@ package org.mdev.revolution.database.dao;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Example;
 import org.hibernate.criterion.Restrictions;
+import org.mdev.revolution.utilities.HibernateUtil;
 
 import java.io.Serializable;
 import java.util.List;
 
 @SuppressWarnings("unchecked")
-public class GenericHibernateDAO<T, K extends Serializable> implements GenericDAO<T, K> {
-    private SessionFactory sessionFactory;
+public class GenericHibernateDao<T, K extends Serializable> implements GenericDao<T, K> {
     private Class clazz;
 
-    public GenericHibernateDAO(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+    public Session getSession() {
+        return HibernateUtil.currentSession();
     }
 
     public void setClazz(Class clazz) {
         this.clazz = clazz;
     }
 
+    @Override
     public K create(Object entity) {
-        return (K) sessionFactory.getCurrentSession().save(entity);
+        return (K) getSession().save(entity);
     }
 
+    @Override
     public T read(K id) {
-        Object entity = sessionFactory.getCurrentSession().get(clazz, id);
+        Object entity = getSession().get(clazz, id);
         return (T) entity;
     }
 
+    @Override
     public void update(T object) {
-        sessionFactory.getCurrentSession().update(object);
+        getSession().update(object);
     }
 
+    @Override
     public void delete(T object) {
-        sessionFactory.getCurrentSession().delete(object);
+        getSession().delete(object);
     }
 
+    @Override
+    public void save(T object) {
+        getSession().save(object);
+    }
+
+    @Override
     public void flush() {
-        sessionFactory.getCurrentSession().flush();
+        getSession().flush();
     }
 
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<T> find(DetachedCriteria criteria) {
+        return criteria.getExecutableCriteria(getSession()).list();
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<T> findByExample(Object value) {
+        Criteria criteria = getSession().createCriteria(clazz);
+        Example example = Example.create(value).ignoreCase();
+        criteria.add(example);
+        return criteria.list();
+    }
+
+    @Override
     public List<T> getByProperty(String property, Object value) {
-        Session hSession = sessionFactory.getCurrentSession();
-        Criteria criteria = hSession.createCriteria(clazz);
+        Criteria criteria = getSession().createCriteria(clazz);
         criteria.add(Restrictions.eq(property, value));
         return criteria.list();
     }
 
+    @Override
     public T getByPropertyUnique(String property, Object value) {
-        return (T) sessionFactory.getCurrentSession().createCriteria(clazz).add(
+        return (T) getSession().createCriteria(clazz).add(
                 Restrictions.eq(property, value)
         ).uniqueResult();
     }

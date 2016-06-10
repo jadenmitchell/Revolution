@@ -21,7 +21,6 @@ public class ServerChannelHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object obj) throws Exception {
-        System.out.println(obj);
     }
 
     @Override
