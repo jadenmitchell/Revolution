@@ -65,13 +65,23 @@ public class Revolution {
 
     private static void loadEverythingElse() {
         Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
-        injector = getInjector();
+
+        injector = LifecycleInjector
+                .builder()
+                .usingBasePackages("org.mdev.revolution")
+                .withBootstrapModule(
+                        binder -> binder.bindConfigurationProvider().toInstance(ArchaiusConfigurationProvider.builder().build())
+                )
+                .withModuleClass(CloseableModule.class)
+                .withModuleClass(Jsr250Module.class)
+                .build().createInjector();
 
         getInstance().databaseManager = new DatabaseManager();
         getInstance().databaseManager.initialize();
         getInstance().packetManager = new PacketManager();
         getInstance().packetManager.initialize();
         getInstance().sessionManager = new SessionManager();
+
         HabboEncryption.initialize(N, E, D);
         getInstance().getServer().start();
 
@@ -102,15 +112,7 @@ public class Revolution {
     }
 
     public static Injector getInjector() {
-        return LifecycleInjector
-                .builder()
-                .usingBasePackages("org.mdev.revolution")
-                .withBootstrapModule(
-                        binder -> binder.bindConfigurationProvider().toInstance(ArchaiusConfigurationProvider.builder().build())
-                )
-                .withModuleClass(CloseableModule.class)
-                .withModuleClass(Jsr250Module.class)
-                .build().createInjector();
+        return injector;
     }
 
     public static void main(String[] args) {
@@ -132,7 +134,6 @@ public class Revolution {
         long start = System.currentTimeMillis();
         loadConfiguration(configFile);
         loadEverythingElse();
-        //server.loadAssets();
 
         long elapsed = System.currentTimeMillis() - start;
         logger.info("Revolution Server started up in " + elapsed + "ms");
@@ -140,8 +141,7 @@ public class Revolution {
         Thread hook = new Thread(Revolution::shutdown);
         Runtime.getRuntime().addShutdownHook(hook);
 
-        while (true) {
-        }
+        while (true) {}
     }
 
     private static void shutdown() {

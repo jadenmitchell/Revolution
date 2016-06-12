@@ -26,10 +26,8 @@ public class XMLPolicyDecoder extends MessageToMessageDecoder<ByteBuf> {
         char delimiter = (char)buffer.readByte();
 
         buffer.resetReaderIndex();
-        InetSocketAddress sock = (InetSocketAddress)ctx.channel().remoteAddress();
-
-        System.out.println(sock.getHostName());
         if (delimiter == ':') {
+            InetSocketAddress sock = (InetSocketAddress)ctx.channel().remoteAddress();
             if (!sock.getHostName().equals("127.0.0.1")) {
                 logger.warn("An attempted RCON connection rejected from IP Address: {0}", sock.getHostName());
                 ctx.close();
@@ -41,7 +39,7 @@ public class XMLPolicyDecoder extends MessageToMessageDecoder<ByteBuf> {
             ctx.pipeline().remove(PacketDecoder.class);
             ctx.pipeline().remove(this);
         }
-        if (delimiter == '<') {
+        else if (delimiter == '<') {
             String policy = "<?xml version=\"1.0\"?>\r\n"
                     + "<!DOCTYPE cross-domain-policy SYSTEM \"/xml/dtds/cross-domain-policy.dtd\">\r\n"
                     + "<cross-domain-policy>\r\n"
