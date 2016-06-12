@@ -8,7 +8,9 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageDecoder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.mdev.revolution.Revolution;
 
+import java.net.InetSocketAddress;
 import java.util.List;
 
 public class XMLPolicyDecoder extends MessageToMessageDecoder<ByteBuf> {
@@ -24,7 +26,21 @@ public class XMLPolicyDecoder extends MessageToMessageDecoder<ByteBuf> {
         char delimiter = (char)buffer.readByte();
 
         buffer.resetReaderIndex();
+        InetSocketAddress sock = (InetSocketAddress)ctx.channel().remoteAddress();
 
+        System.out.println(sock.getHostName());
+        if (delimiter == ':') {
+            if (!sock.getHostName().equals("127.0.0.1")) {
+                logger.warn("An attempted RCON connection rejected from IP Address: {0}", sock.getHostName());
+                ctx.close();
+                return;
+            }
+
+            logger.debug("An RCON client successfully has connected from IP Address: {0}.", sock.getHostName());
+            ctx.pipeline().addFirst("rconDecoder", Revolution.getInjector().getInstance(RconDecoder.class));
+            ctx.pipeline().remove(PacketDecoder.class);
+            ctx.pipeline().remove(this);
+        }
         if (delimiter == '<') {
             String policy = "<?xml version=\"1.0\"?>\r\n"
                     + "<!DOCTYPE cross-domain-policy SYSTEM \"/xml/dtds/cross-domain-policy.dtd\">\r\n"

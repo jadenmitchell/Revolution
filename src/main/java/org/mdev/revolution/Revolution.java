@@ -65,7 +65,7 @@ public class Revolution {
 
     private static void loadEverythingElse() {
         Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
-        injector = getBootstrappedInjector();
+        injector = getInjector();
 
         getInstance().databaseManager = new DatabaseManager();
         getInstance().databaseManager.initialize();
@@ -101,7 +101,7 @@ public class Revolution {
         return packetManager;
     }
 
-    public static Injector getBootstrappedInjector() {
+    public static Injector getInjector() {
         return LifecycleInjector
                 .builder()
                 .usingBasePackages("org.mdev.revolution")
