@@ -3,6 +3,7 @@ package org.mdev.revolution.communication.packets.incoming.handshake;
 import org.mdev.revolution.communication.packets.PacketEvent;
 import org.mdev.revolution.communication.packets.incoming.ClientPacket;
 import org.mdev.revolution.communication.packets.incoming.ClientPacketHeader;
+import org.mdev.revolution.communication.packets.outgoing.notifications.HabboBroadcastMessageComposer;
 import org.mdev.revolution.network.sessions.Session;
 
 public class SSOTicketMessageEvent {
@@ -11,6 +12,9 @@ public class SSOTicketMessageEvent {
     @PacketEvent(number = ClientPacketHeader.SSOTicketMessageEvent)
     public static void tryLogin(Session session, ClientPacket packet) {
         String ssoTicket = packet.readString();
-        session.tryAuthenticate(ssoTicket);
+
+        if (!session.tryLogin(ssoTicket)) {
+            session.sendPacket(new HabboBroadcastMessageComposer("There was an error while logging you in."));
+        }
     }
 }

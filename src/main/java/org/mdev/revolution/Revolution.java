@@ -16,6 +16,10 @@ import org.mdev.revolution.network.sessions.SessionManager;
 import org.mdev.revolution.utilities.Configuration;
 
 import java.io.File;
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Singleton
 public class Revolution {
@@ -61,19 +65,14 @@ public class Revolution {
 
     private static void loadEverythingElse() {
         Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
-
         injector = getBootstrappedInjector();
 
         getInstance().databaseManager = new DatabaseManager();
         getInstance().databaseManager.initialize();
-
         getInstance().packetManager = new PacketManager();
         getInstance().packetManager.initialize();
-
-        HabboEncryption.initialize(N, E, D);
-
         getInstance().sessionManager = new SessionManager();
-
+        HabboEncryption.initialize(N, E, D);
         getInstance().getServer().start();
 
         Thread.currentThread().setPriority(Thread.NORM_PRIORITY);
@@ -141,12 +140,47 @@ public class Revolution {
         Thread hook = new Thread(Revolution::shutdown);
         Runtime.getRuntime().addShutdownHook(hook);
 
-        while (true) {}
+        while (true) {
+        }
     }
 
     private static void shutdown() {
         Revolution.getInstance().getServer().stop();
         Revolution.getInstance().getDatabaseManager().dispose();
         Revolution.getInstance().getPacketManager().dispose();
+    }
+
+    public static String dateToUnixTimestamp(Date fecha) {
+        String res = "";
+        Date aux = stringToDate("1970-01-01 00:00:00");
+        Timestamp aux1 = dateToTimeStamp(aux);
+        Timestamp aux2 = dateToTimeStamp(fecha);
+        long diferenciaMils = aux2.getTime() - aux1.getTime();
+        long segundos = diferenciaMils / 1000;
+        return res + segundos;
+    }
+
+    public static Date stringToDate(String fecha) {
+        // Solo funciona con string en el formato yyyy-MM-dd HH:mm:ss
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date res = null;
+        try {
+            res = format.parse(fecha);
+        } catch (ParseException e) {
+            logger.error("Failed to convert string to date", e);
+        }
+        return res;
+    }
+
+    public static Timestamp dateToTimeStamp(Date fecha) {
+        return new Timestamp(fecha.getTime());
+    }
+
+    public static Date fechaHoraSistema() {
+        return new Date(System.currentTimeMillis());
+    }
+
+    public static int getUnixTimestamp() {
+        return Integer.parseInt(dateToUnixTimestamp(fechaHoraSistema()));
     }
 }

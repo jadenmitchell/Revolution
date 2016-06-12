@@ -7,6 +7,10 @@ import java.io.Serializable;
 public class PlayerBean implements Serializable {
     private Player player;
 
+    public Player getPlayer() {
+        return player;
+    }
+
     public PlayerBean(Player player) {
         super();
         this.player = player;

@@ -25,7 +25,8 @@ public class HibernateUtil {
         Session s = (Session) session.get();
         session.set(null);
 
-        if (s != null)
+        if (s != null) {
             s.close();
+        }
     }
 }

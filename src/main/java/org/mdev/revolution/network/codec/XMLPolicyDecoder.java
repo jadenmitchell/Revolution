@@ -33,11 +33,7 @@ public class XMLPolicyDecoder extends MessageToMessageDecoder<ByteBuf> {
                     + "</cross-domain-policy>\0";
 
             ctx.writeAndFlush(Unpooled.copiedBuffer(policy.getBytes()).retain()).addListener(ChannelFutureListener.CLOSE);
-        }
-        else {
             ctx.pipeline().remove(this);
-            PacketDecoder decoder = ctx.pipeline().get(PacketDecoder.class);
-            decoder.decode(ctx, buffer, out);
         }
     }
 }

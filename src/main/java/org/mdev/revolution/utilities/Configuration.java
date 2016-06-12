@@ -3,10 +3,7 @@ package org.mdev.revolution.utilities;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Properties;
 
 public class Configuration {
@@ -30,6 +27,10 @@ public class Configuration {
 
     public int size() {
         return props.size();
+    }
+
+    public String getOrDefault(String key, String value) {
+        return props.getOrDefault(key, value).toString();
     }
 
     public String getString(String key) {

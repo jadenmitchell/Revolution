@@ -43,6 +43,7 @@ public class Server {
     private String host;
     private List<Integer> ports;
 
+    @Deprecated
     private static final ThreadFactory threadFactory = new ThreadFactory() {
         private final ThreadFactory wrapped = Executors.defaultThreadFactory();
 
@@ -79,7 +80,7 @@ public class Server {
         boolean epollEnabled = Revolution.getConfig().getString("network.epoll").equals("true");
         boolean epollAvailable = Epoll.isAvailable();
 
-        EventLoopGroup bossGroup = new NioEventLoopGroup(groupThreadCount, threadFactory);
+        EventLoopGroup bossGroup = new NioEventLoopGroup(groupThreadCount, Executors.defaultThreadFactory());
         EventLoopGroup workerGroup = new NioEventLoopGroup(groupThreadCount);
 
         if (epollEnabled) {
@@ -87,7 +88,7 @@ public class Server {
                 logger.error("You must be running on a Linux machine in order to use epoll!");
                 logger.debug("Using the default NIO event loop group.");
             } else {
-                bossGroup = new EpollEventLoopGroup(groupThreadCount, threadFactory);
+                bossGroup = new EpollEventLoopGroup(groupThreadCount, Executors.privilegedThreadFactory());
                 workerGroup = new EpollEventLoopGroup(groupThreadCount);
             }
         } else if (epollAvailable) {
