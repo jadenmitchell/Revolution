@@ -26,7 +26,7 @@ public class PacketManager {
         packets = new THashMap<>();
         threadPool = new ThreadPool();
     }
-
+    
     public void initialize() {
         if (!packets.isEmpty()) {
             throw new IllegalStateException("Cannot re-initialize the PacketManager class.");

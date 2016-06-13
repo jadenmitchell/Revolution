@@ -37,7 +37,7 @@ public class XMLPolicyDecoder extends MessageToMessageDecoder<ByteBuf> {
             logger.debug("An RCON client successfully has connected from IP Address: {0}.", sock.getHostName());
             ctx.pipeline().addFirst("rconDecoder", Revolution.getInjector().getInstance(RconDecoder.class));
             ctx.pipeline().remove(PacketDecoder.class);
-            ctx.pipeline().remove(this);
+            ctx.pipeline().remove("policyDecoder");
         }
         else if (delimiter == '<') {
             String policy = "<?xml version=\"1.0\"?>\r\n"
@@ -47,7 +47,15 @@ public class XMLPolicyDecoder extends MessageToMessageDecoder<ByteBuf> {
                     + "</cross-domain-policy>\0";
 
             ctx.writeAndFlush(Unpooled.copiedBuffer(policy.getBytes()).retain()).addListener(ChannelFutureListener.CLOSE);
+            ctx.pipeline().remove("policyDecoder");
+        }
+        else {
+            // WHY HASN'T THIS BEEN REMOVED??
+            // I SHOULD JUST REMOVE THIS BEFORE PARSING DELIMITER?
             ctx.pipeline().remove(this);
+
+            PacketDecoder decoder = ctx.pipeline().get(PacketDecoder.class);
+            decoder.decode(ctx, buffer, out);
         }
     }
 }

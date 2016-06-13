@@ -78,7 +78,7 @@ public class Session {
 
     public void enableRC4(byte[] sharedKey) {
         rc4 = new ARC4();
-        rc4.initialize(sharedKey);
+        rc4.init(sharedKey);
         channel.pipeline().addBefore("packetDecoder", "packetCrypto", new EncryptionDecoder());
     }
 

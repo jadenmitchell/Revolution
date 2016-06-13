@@ -1,27 +1,28 @@
 package org.mdev.revolution.communication.encryption;
 
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
+
 public class ARC4 {
-    public static final int POOL_SIZE = 256;
-
-    private int i;
-    private int j;
-
-    private final byte[] bytes;
+    private static final int POOL_SIZE = 256;
+    private int i = 0;
+    private int j = 0;
+    private int[] table;
 
     public ARC4() {
-        bytes = new byte[POOL_SIZE];
+        table = new int[POOL_SIZE];
     }
 
-    public void initialize(byte[] key) {
+    public void init(byte[] key) {
         i = 0;
         j = 0;
 
         for (i = 0; i < POOL_SIZE; ++i) {
-            bytes[i] = (byte) i;
+            table[i] = (byte) i;
         }
 
         for (i = 0; i < POOL_SIZE; ++i) {
-            j = (j + bytes[i] + key[i % key.length]) & (POOL_SIZE - 1);
+            j = (j + table[i] + key[i % key.length]) & (POOL_SIZE - 1);
             swap(i, j);
         }
 
@@ -30,26 +31,23 @@ public class ARC4 {
     }
 
     private void swap(int a, int b) {
-        byte t = bytes[a];
-        bytes[a] = bytes[b];
-        bytes[b] = t;
+        int k = table[a];
+        table[a] = table[b];
+        table[b] = k;
     }
 
-    public byte next() {
+    private byte next() {
         i = ++i & (POOL_SIZE - 1);
-        j = (j + bytes[i]) & (POOL_SIZE - 1);
+        j = (j + table[i]) & (POOL_SIZE - 1);
         swap(i, j);
-        return bytes[(bytes[i] + bytes[j]) & 255];
+        return (byte) table[(table[i] + table[j]) & (POOL_SIZE - 1)];
     }
 
-    public byte[] encrypt(byte[] src) {
-        for (int k = 0; k < src.length; k++) {
-            src[k] ^= next();
+    public ByteBuf decipher(ByteBuf buf) {
+        ByteBuf result = Unpooled.buffer();
+        while (buf.isReadable()) {
+            result.writeByte((byte) (buf.readByte() ^ next()));
         }
-        return src;
-    }
-
-    public byte[] decrypt(byte[] src) {
-        return encrypt(src);
+        return result.resetReaderIndex();
     }
 }
