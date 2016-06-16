@@ -15,6 +15,6 @@ public interface GenericDao<T, K extends Serializable> {
     void flush();
     List<T> find(DetachedCriteria criteria);
     List<T> findByExample(T object);
-    List<T> getByProperty(String property, Object value);
-    T getByPropertyUnique(String property, Object value);
+    List<T> findByProperty(String property, Object value);
+    T findByPropertyUnique(String property, Object value);
 }

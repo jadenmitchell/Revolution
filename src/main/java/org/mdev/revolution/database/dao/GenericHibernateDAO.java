@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @SuppressWarnings("unchecked")
-public class GenericHibernateDao<T, K extends Serializable> implements GenericDao<T, K> {
+public abstract class GenericHibernateDao<T, K extends Serializable> implements GenericDao<T, K> {
     private Class clazz;
 
     public Session getSession() {
@@ -55,13 +55,13 @@ public class GenericHibernateDao<T, K extends Serializable> implements GenericDa
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<T> find(DetachedCriteria criteria) {
+    public List<T> find(final DetachedCriteria criteria) {
         return criteria.getExecutableCriteria(getSession()).list();
     }
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<T> findByExample(Object value) {
+    public List<T> findByExample(final Object value) {
         Criteria criteria = getSession().createCriteria(clazz);
         Example example = Example.create(value).ignoreCase();
         criteria.add(example);
@@ -69,14 +69,14 @@ public class GenericHibernateDao<T, K extends Serializable> implements GenericDa
     }
 
     @Override
-    public List<T> getByProperty(String property, Object value) {
+    public List<T> findByProperty(String property, final Object value) {
         Criteria criteria = getSession().createCriteria(clazz);
         criteria.add(Restrictions.eq(property, value));
         return criteria.list();
     }
 
     @Override
-    public T getByPropertyUnique(String property, Object value) {
+    public T findByPropertyUnique(String property, final Object value) {
         return (T) getSession().createCriteria(clazz).add(
                 Restrictions.eq(property, value)
         ).uniqueResult();

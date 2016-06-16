@@ -35,7 +35,6 @@ public class PacketManager {
         Reflections reflections = new Reflections(new ConfigurationBuilder()
                 .setUrls(ClasspathHelper.forPackage("org.mdev.revolution.communication.packets.incoming"))
                 .setScanners(new MethodAnnotationsScanner()));
-
         Set<Method> methods = reflections.getMethodsAnnotatedWith(PacketEvent.class);
 
         for (Method method : methods) {

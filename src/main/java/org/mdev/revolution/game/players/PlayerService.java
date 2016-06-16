@@ -5,19 +5,19 @@ import org.apache.logging.log4j.Logger;
 import org.mdev.revolution.Revolution;
 import org.mdev.revolution.communication.packets.incoming.handshake.SSOTicketMessageEvent;
 import org.mdev.revolution.database.dao.PlayerDao;
-import org.mdev.revolution.database.models.Player;
+import org.mdev.revolution.database.domain.Player;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public final class PlayerService {
     private static final Logger logger = LogManager.getLogger(PlayerService.class);
 
-    private static PlayerDao playerDao;
-
+    private static final PlayerDao playerDao = new PlayerDao();
     @SuppressWarnings("unchecked")
     public static PlayerDao getPlayerDao() {
-        if (playerDao == null) playerDao = new PlayerDao();
         return playerDao;
     }
 
@@ -35,19 +35,39 @@ public final class PlayerService {
             }
         }
 
-        Player player = playerDao.getByPropertyUnique("auth_ticket", ssoTicket);
-        removeSSOTicket(player.getId());
-        return player;
+        Connection connection = Revolution.getInstance().getDatabaseManager().getConnection();
+        int playerId = -1;
+
+        try (PreparedStatement stmt = connection.prepareStatement("SELECT id FROM users WHERE auth_ticket = ?")) {
+            stmt.setString(1, ssoTicket);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                playerId = rs.getInt(1);
+            }
+            if (rs.getFetchSize() > 1) {
+                logger.warn("Possible SQL injection detected, for authentication ticket: " + ssoTicket);
+            }
+            rs.close();
+            stmt.close();
+            connection.close();
+        } catch (SQLException e) {
+            logger.error("SQL exception while executing a prepared statement.", e);
+            return null;
+        }
+
+        return playerDao.findByPropertyUnique("id", playerId);
     }
 
-    public static void removeSSOTicket(Long playerId) {
-        try {
-            PreparedStatement stmt = Revolution.getInstance().getDatabaseManager().query("UPDATE `users` SET `auth_ticket` = '' WHERE `id` = ? LIMIT 1;");
-            stmt.setLong(1, playerId);
+    public static void removeSSOTicket(int playerId) {
+        Connection connection = Revolution.getInstance().getDatabaseManager().getConnection();
+
+        try (PreparedStatement stmt = connection.prepareStatement("UPDATE `users` SET `auth_ticket` = '' WHERE `id` = ? LIMIT 1")) {
+            stmt.setInt(1, playerId);
             stmt.executeUpdate();
-        }
-        catch (SQLException e) {
-            logger.error("Error while nullifying a user's authentication ticket", e);
+            stmt.close();
+            connection.close();
+        } catch (SQLException e) {
+            logger.error("SQL exception while executing a prepared statement.", e);
         }
     }
 }

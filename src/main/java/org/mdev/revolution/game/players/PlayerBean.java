@@ -1,6 +1,6 @@
 package org.mdev.revolution.game.players;
 
-import org.mdev.revolution.database.models.Player;
+import org.mdev.revolution.database.domain.Player;
 
 import java.io.Serializable;
 

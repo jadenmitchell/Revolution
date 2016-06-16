@@ -17,7 +17,14 @@
         <datasource-mapping>
           <factory-entry name="org.mdev.revolution.jpa" />
         </datasource-mapping>
-        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/../../src/main/java/META-INF/persistence.xml" />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/../../src/main/resources/META-INF/persistence.xml" />
+      </configuration>
+    </facet>
+    <facet type="javaeeApplication" name="javaEEApplication">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="application.xml" url="file://$MODULE_DIR$/META-INF/application.xml" />
+        </descriptors>
       </configuration>
     </facet>
   </component>
@@ -41,7 +48,6 @@
     <orderEntry type="library" name="Gradle: io.netty:netty-all:4.1.0.Final" level="project" />
     <orderEntry type="library" name="Gradle: mysql:mysql-connector-java:6.0.2" level="project" />
     <orderEntry type="library" name="Gradle: com.zaxxer:HikariCP:2.4.6" level="project" />
-    <orderEntry type="library" name="Gradle: org.jooq:jooq:3.8.2" level="project" />
     <orderEntry type="library" name="Gradle: org.hibernate:hibernate-core:5.1.0.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.hibernate:hibernate-entitymanager:5.1.0.Final" level="project" />
     <orderEntry type="library" name="Gradle: com.google.guava:guava:18.0" level="project" />

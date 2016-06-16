@@ -48,6 +48,7 @@ public class XMLPolicyDecoder extends MessageToMessageDecoder<ByteBuf> {
 
             ctx.writeAndFlush(Unpooled.copiedBuffer(policy.getBytes()).retain()).addListener(ChannelFutureListener.CLOSE);
             ctx.pipeline().remove("policyDecoder");
+            System.out.println(ctx.pipeline().toMap());
         }
         else {
             // WHY HASN'T THIS BEEN REMOVED??

@@ -15,11 +15,11 @@ public class HabboEncryption {
     }
 
     public static String toHexString(byte[] bytes) {
-        return DatatypeConverter.printHexBinary(bytes);
+        return SecurityUtil.bytesToHex(bytes);
     }
 
     public static byte[] toByteArray(String s) {
-        return DatatypeConverter.parseHexBinary(s);
+        return SecurityUtil.hexToBytes(s);
     }
 
     private static String getRsaStringEncrypted(String msg) {

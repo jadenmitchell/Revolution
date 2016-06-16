@@ -14,6 +14,7 @@ import org.mdev.revolution.communication.packets.outgoing.inventory.avatareffect
 import org.mdev.revolution.communication.packets.outgoing.navigator.NavigatorSettingsComposer;
 import org.mdev.revolution.communication.packets.outgoing.notifications.HabboBroadcastMessageComposer;
 import org.mdev.revolution.communication.packets.outgoing.notifications.MOTDNotificationComposer;
+import org.mdev.revolution.database.domain.Player;
 import org.mdev.revolution.game.players.PlayerBean;
 import org.mdev.revolution.game.players.PlayerService;
 import org.mdev.revolution.network.codec.EncryptionDecoder;
@@ -42,13 +43,15 @@ public class Session {
         try {
             logger.info("logging in...");
             //ssoTicket = ESAPI.encoder().encodeForSQL(new OracleCodec(), ssoTicket);
-            playerBean = new PlayerBean(PlayerService.findPlayer(ssoTicket));
-
-            if (playerBean.getPlayer() == null) {
+            Player player = PlayerService.findPlayer(ssoTicket);
+            if (player == null) {
                 sendPacket(new HabboBroadcastMessageComposer("No player found with your session ticket"));
-                disconnect();
                 return false;
-            }
+            } 
+
+            PlayerService.removeSSOTicket(player.getId());
+
+            playerBean = new PlayerBean(player);
 
             sendQueued(new AuthenticationOKComposer())
                     .sendQueued(new AvailabilityStatusMessageComposer())

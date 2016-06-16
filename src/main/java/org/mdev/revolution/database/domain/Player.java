@@ -1,4 +1,4 @@
-package org.mdev.revolution.database.models;
+package org.mdev.revolution.database.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -8,16 +8,16 @@ import java.io.Serializable;
 public class Player implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
 
-    @Column(name = "email", unique = true, nullable = false)
+    @Column(name = "mail", unique = true, nullable = false)
     private String email;
 
     public Player() {
         super();
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 

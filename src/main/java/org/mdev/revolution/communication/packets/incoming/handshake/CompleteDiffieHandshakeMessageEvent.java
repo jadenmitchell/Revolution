@@ -14,6 +14,7 @@ public class CompleteDiffieHandshakeMessageEvent {
     @PacketEvent(number = ClientPacketHeader.CompleteDiffieHandshakeMessageEvent)
     public static void completeHandshake(Session session, ClientPacket packet) {
         String cipherPublicKey = packet.readString();
+        //String publicKey = HabboEncryption.getRsaStringDecrypted(cipherPublicKey);
 
         BigInteger sharedKey = HabboEncryption.calculateDiffieHellmanSharedKey(cipherPublicKey);
 

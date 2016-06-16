@@ -9,15 +9,14 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
-import org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorBuilderImpl;
 import org.hibernate.service.ServiceRegistry;
-import org.jooq.DSLContext;
-import org.jooq.SQLDialect;
-import org.jooq.impl.DSL;
 import org.mdev.revolution.Revolution;
 
 import javax.activation.DataSource;
 import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -28,49 +27,41 @@ public class DatabaseManager {
 
     private HikariDataSource dataSource;
     private SessionFactory sessionFactory;
+    private EntityManagerFactory emf;
 
     @Inject
     public void initialize() {
         HikariConfig hikariConfig = new HikariConfig();
         hikariConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        hikariConfig.setDataSourceJNDI("jdbc/HikariDataSource");
         hikariConfig.setJdbcUrl("jdbc:mysql://localhost:3306/" + Revolution.getConfig().getString("mysql.database") + "?autoReconnect=true&useSSL=false");
-        //System.out.println(Revolution.getConfig().getString("mysql.user") + "\n" + Revolution.getConfig().getString("mysql.pass"));
         hikariConfig.setUsername(Revolution.getConfig().getString("mysql.user"));
         hikariConfig.setPassword(Revolution.getConfig().getString("mysql.pass"));
         hikariConfig.setMaximumPoolSize(Revolution.getConfig().getInt("mysql.maxconnections"));
         hikariConfig.addDataSourceProperty("cachePrepStmts", true);
         hikariConfig.addDataSourceProperty("prepStmtCacheSize", 250);
         hikariConfig.addDataSourceProperty("prepStmtCacheSqlLimit", 2048);
-        setDataSource(new HikariDataSource(hikariConfig));
+        dataSource = new HikariDataSource(hikariConfig);
         Configuration configuration = new Configuration().configure();
         ServiceRegistry serviceRegistry
                 = new StandardServiceRegistryBuilder()
-                .applySetting(Environment.TRANSACTION_COORDINATOR_STRATEGY, JtaTransactionCoordinatorBuilderImpl.class)
+                //.applySetting(Environment.TRANSACTION_COORDINATOR_STRATEGY, JtaTransactionCoordinatorBuilderImpl.class)
                 //.applySetting(Environment.CONNECTION_PROVIDER, "com.zaxxer.hikari.hibernate.HikariConnectionProvider")
+                //.applySetting(Environment.SESSION_FACTORY_NAME, dataSource.getDataSourceJNDI())
+                //.applySetting(Environment.SESSION_FACTORY_NAME_IS_JNDI, "true")
+                .applySetting(Environment.DIALECT, "org.hibernate.dialect." + (Revolution.getConfig().getString("mysql.dialect").equals("innodb") ? "MySQLInnoDBDialect" : "MySQLDialect"))
                 .applySetting(Environment.DATASOURCE, dataSource)
                 .build();
-        setSessionFactory(configuration.buildSessionFactory(serviceRegistry));
+        sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+        emf = Persistence.createEntityManagerFactory("org.mdev.revolution.jpa");
+    }
+
+    public EntityManager createEntityManager() {
+        return emf.createEntityManager();
     }
 
     public Session openSession() {
         return sessionFactory.openSession();
-    }
-
-    @SuppressWarnings("unused")
-    public PreparedStatement query(String sql) {
-        Connection connection = getConnection();
-
-        try {
-            return connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-        } catch (SQLException e) {
-            logger.error("Failed to execute query: " + sql, e);
-            e.printStackTrace();
-            System.exit(0);
-        }
-
-        // This should never happen, LORD HAVE MERCY!!!!
-        logger.info("What the fuck just happened???");
-        return null;
     }
 
     public Connection getConnection() {
@@ -84,10 +75,6 @@ public class DatabaseManager {
         }
     }
 
-    public DSLContext getContext() {
-        return DSL.using(getConnection(), SQLDialect.MYSQL);
-    }
-
     @SuppressWarnings("unused")
     public DataSource getDataSource() {
         return (DataSource)dataSource;
@@ -96,14 +83,6 @@ public class DatabaseManager {
     @SuppressWarnings("unused")
     public SessionFactory getSessionFactory() {
         return sessionFactory;
-    }
-
-    public void setDataSource(HikariDataSource dataSource) {
-        this.dataSource = dataSource;
-    }
-
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
     }
 
     public void dispose() {

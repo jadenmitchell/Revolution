@@ -1,6 +1,5 @@
 package org.mdev.revolution.communication.encryption;
 
-@Deprecated
 public class SecurityUtil {
     final private static char[] hexArray = "0123456789ABCDEF".toCharArray();
 
