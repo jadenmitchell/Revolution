@@ -1,5 +1,8 @@
 package org.mdev.revolution.database;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import com.google.inject.persist.jpa.JpaPersistModule;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.logging.log4j.LogManager;
@@ -18,9 +21,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class DatabaseManager {
     private static final Logger logger = LogManager.getLogger(DatabaseManager.class);
@@ -28,6 +29,7 @@ public class DatabaseManager {
     private HikariDataSource dataSource;
     private SessionFactory sessionFactory;
     private EntityManagerFactory emf;
+    private Injector injector;
 
     @Inject
     public void initialize() {
@@ -54,10 +56,16 @@ public class DatabaseManager {
                 .build();
         sessionFactory = configuration.buildSessionFactory(serviceRegistry);
         emf = Persistence.createEntityManagerFactory("org.mdev.revolution.jpa");
+        injector = Guice.createInjector(new JpaPersistModule("org.mdev.revolution.jpa"));
     }
 
     public EntityManager createEntityManager() {
         return emf.createEntityManager();
+    }
+
+    @SuppressWarnings("unchecked")
+    public Injector getInjector() {
+        return injector;
     }
 
     public Session openSession() {
@@ -73,16 +81,6 @@ public class DatabaseManager {
             e.printStackTrace();
             return null;
         }
-    }
-
-    @SuppressWarnings("unused")
-    public DataSource getDataSource() {
-        return (DataSource)dataSource;
-    }
-
-    @SuppressWarnings("unused")
-    public SessionFactory getSessionFactory() {
-        return sessionFactory;
     }
 
     public void dispose() {
