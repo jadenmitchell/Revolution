@@ -55,6 +55,7 @@ public final class PlayerService {
             return null;
         }
 
+        System.out.println("PLAYER ID: " + playerId);
         return playerDao.findByPropertyUnique("id", playerId);
     }
 

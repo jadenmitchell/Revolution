@@ -1,7 +1,13 @@
 package org.mdev.revolution.database.dao;
 
+import com.google.inject.AbstractModule;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import com.google.inject.persist.Transactional;
+import com.google.inject.persist.jpa.JpaPersistModule;
 import org.hibernate.CacheMode;
 import org.mdev.revolution.Revolution;
+import org.mdev.revolution.database.DatabaseModule;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -15,16 +21,8 @@ import java.util.Locale;
 
 @SuppressWarnings("unchecked")
 public abstract class GenericJpaDao<T, K extends Serializable> {
-    @Inject
     @PersistenceContext
     private EntityManager entityManager;
-
-    protected EntityManager getEntityManager() {
-        if (entityManager == null) {
-            entityManager = Revolution.getInstance().getDatabaseManager().getInjector().getInstance(EntityManager.class);
-        }
-        return entityManager;
-    }
 
     private Class clazz;
 
@@ -32,31 +30,39 @@ public abstract class GenericJpaDao<T, K extends Serializable> {
         this.clazz = clazz;
     }
 
+    @Inject
     public GenericJpaDao() {
-        entityManager = Revolution.getInstance().getDatabaseManager().createEntityManager();
+        Injector injector = Guice.createInjector(DatabaseModule.INSTANCE);
+        entityManager = injector.getInstance(EntityManager.class);
     }
 
+    @Transactional
     public void create(T entity) {
-        getEntityManager().persist(entity);
+        entityManager.persist(entity);
     }
 
+    @Transactional
     public void update(T entity) {
-        getEntityManager().merge(entity);
+        entityManager.merge(entity);
     }
 
+    @Transactional
     public void remove(K id) {
-        Object entity = getEntityManager().find(clazz, id);
+        Object entity = entityManager.find(clazz, id);
         remove((T) entity);
     }
 
+    @Transactional
     public void remove(T entity) {
-        getEntityManager().remove(getEntityManager().merge(entity));
+        entityManager.remove(entityManager.merge(entity));
     }
 
+    @Transactional
     public void delete(T object) {
-        getEntityManager().detach(object);
+        entityManager.detach(object);
     }
 
+    @Transactional
     public void save(T object) {
         if (entityManager.contains(object)) {
             update(object);
@@ -65,18 +71,21 @@ public abstract class GenericJpaDao<T, K extends Serializable> {
         }
     }
 
+    @Transactional
     public void flush() {
-        getEntityManager().flush();
+        entityManager.flush();
     }
 
+    @Transactional
     @SuppressWarnings("unchecked")
     public List<T> findAll() {
-        final CriteriaQuery<T> criteriaQuery = getEntityManager().getCriteriaBuilder()
+        final CriteriaQuery<T> criteriaQuery = entityManager.getCriteriaBuilder()
                 .createQuery(clazz);
         criteriaQuery.select(criteriaQuery.from(clazz));
-        return getEntityManager().createQuery(criteriaQuery).getResultList();
+        return entityManager.createQuery(criteriaQuery).getResultList();
     }
 
+    @Transactional
     @SuppressWarnings("unchecked")
     private TypedQuery<T> findTypedQueryByProperty(String property, Object value) {
         final CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
@@ -88,6 +97,7 @@ public abstract class GenericJpaDao<T, K extends Serializable> {
         return entityManager.createQuery(criteriaQuery);
     }
 
+    @Transactional
     @SuppressWarnings("unchecked")
     private TypedQuery<T> findTypedQueryByProperty(final SingularAttribute<T, ? extends Object> property, final Object value) {
         final CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
@@ -110,11 +120,13 @@ public abstract class GenericJpaDao<T, K extends Serializable> {
                 .createQuery(criteriaQuery);
     }
 
+    @Transactional
     @SuppressWarnings("unchecked")
     public List<T> findByProperty(String property, final Object value) {
         return findTypedQueryByProperty(property, value).getResultList();
     }
 
+    @Transactional
     @SuppressWarnings("unchecked")
     public List<T> findByPropertyLimit(String property, final Object value, int maxLimit) {
         return findTypedQueryByProperty(property, value)
@@ -123,6 +135,7 @@ public abstract class GenericJpaDao<T, K extends Serializable> {
                 .getResultList();
     }
 
+    @Transactional
     @SuppressWarnings("unchecked")
     public T findByPropertyUnique(String property, final Object value) {
         return findByPropertyLimit(property, value, 1).get(0);

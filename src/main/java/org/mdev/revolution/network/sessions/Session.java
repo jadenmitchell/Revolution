@@ -47,7 +47,7 @@ public class Session {
             if (player == null) {
                 sendPacket(new HabboBroadcastMessageComposer("No player found with your session ticket"));
                 return false;
-            } 
+            }
 
             PlayerService.removeSSOTicket(player.getId());
 
