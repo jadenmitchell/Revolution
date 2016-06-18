@@ -21,6 +21,7 @@ import java.util.Locale;
 
 @SuppressWarnings("unchecked")
 public abstract class GenericJpaDao<T, K extends Serializable> {
+    @Inject
     @PersistenceContext
     private EntityManager entityManager;
 
@@ -28,12 +29,6 @@ public abstract class GenericJpaDao<T, K extends Serializable> {
 
     public void setClazz(Class clazz) {
         this.clazz = clazz;
-    }
-
-    @Inject
-    public GenericJpaDao() {
-        Injector injector = Guice.createInjector(DatabaseModule.INSTANCE);
-        entityManager = injector.getInstance(EntityManager.class);
     }
 
     @Transactional

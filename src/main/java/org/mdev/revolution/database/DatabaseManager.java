@@ -12,15 +12,16 @@ import org.hibernate.cfg.Environment;
 import org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorBuilderImpl;
 import org.hibernate.service.ServiceRegistry;
 import org.mdev.revolution.Revolution;
-import org.mdev.revolution.communication.packets.outgoing.notifications.HabboBroadcastMessageComposer;
+import org.mdev.revolution.utilities.jndi.XjbInitialContextFactory;
+import org.mdev.revolution.utilities.jndi.XjbInitialContextFactoryBuilder;
 
 import javax.inject.Inject;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.naming.spi.InitialContextFactoryBuilder;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.Hashtable;
 
 public class DatabaseManager {
     private static final Logger logger = LogManager.getLogger(DatabaseManager.class);
@@ -41,28 +42,30 @@ public class DatabaseManager {
         hikariConfig.addDataSourceProperty("prepStmtCacheSize", 250);
         hikariConfig.addDataSourceProperty("prepStmtCacheSqlLimit", 2048);
         dataSource = new HikariDataSource(hikariConfig);
-        try {
-            Hashtable<Object, Object> env = new Hashtable<>();
-            env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.fscontext.RefFSContextFactory");
-            env.put(Context.PROVIDER_URL, "corbaloc::localhost:9810,:localhost:9811");
-            Context context = new InitialContext(env);
-            context.bind("java:/comp/env/jdbc/default", dataSource);
-        }
-        catch(NamingException e) {
-            logger.error("Error binding the JNDI DataSource to the Context", e);
-            System.exit(0);
-        }
+        setupInitialContext();
         Configuration configuration = new Configuration().configure();
         ServiceRegistry serviceRegistry
                 = new StandardServiceRegistryBuilder()
                 //.applySetting(Environment.CONNECTION_PROVIDER, "com.zaxxer.hikari.hibernate.HikariConnectionProvider")
-                //.applySetting(Environment.SESSION_FACTORY_NAME, dataSource.getDataSourceJNDI())
-                //.applySetting(Environment.SESSION_FACTORY_NAME_IS_JNDI, "true")
+                .applySetting(Environment.SESSION_FACTORY_NAME, dataSource.getDataSourceJNDI())
+                .applySetting(Environment.SESSION_FACTORY_NAME_IS_JNDI, "true")
                 .applySetting(Environment.TRANSACTION_COORDINATOR_STRATEGY, JtaTransactionCoordinatorBuilderImpl.class)
                 .applySetting(Environment.DIALECT, "org.hibernate.dialect." + (Revolution.getConfig().getString("mysql.dialect").equals("innodb") ? "MySQLInnoDBDialect" : "MySQLDialect"))
                 .applySetting(Environment.DATASOURCE, dataSource)
                 .build();
         sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+    }
+
+    private void setupInitialContext() {
+        //"jdbc/default
+        try {
+            XjbInitialContextFactory xjbInitialContextFactory = new XjbInitialContextFactory();
+            xjbInitialContextFactory.register("jdbc/default", dataSource);
+        }
+        catch(NamingException e) {
+            logger.error("Error while binding the Hikari DataSource to the JNDI Context", e);
+            System.exit(0); // fatal error
+        }
     }
 
     public Session openSession() {

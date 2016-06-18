@@ -43,7 +43,7 @@ public class Session {
         try {
             logger.info("logging in...");
             //ssoTicket = ESAPI.encoder().encodeForSQL(new OracleCodec(), ssoTicket);
-            Player player = PlayerService.findPlayer(ssoTicket);
+            Player player = PlayerService.getInstance().findPlayer(ssoTicket);
             if (player == null) {
                 sendPacket(new HabboBroadcastMessageComposer("No player found with your session ticket"));
                 return false;

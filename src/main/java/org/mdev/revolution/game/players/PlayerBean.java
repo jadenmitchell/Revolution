@@ -18,7 +18,7 @@ public class PlayerBean implements Serializable {
 
     public void cleanup() {
         if (player != null) {
-            PlayerService.save(player);
+            PlayerService.getInstance().save(player);
             player = null;
         }
     }

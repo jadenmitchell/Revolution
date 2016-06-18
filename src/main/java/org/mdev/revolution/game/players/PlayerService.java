@@ -1,31 +1,49 @@
 package org.mdev.revolution.game.players;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.mdev.revolution.Revolution;
 import org.mdev.revolution.communication.packets.incoming.handshake.SSOTicketMessageEvent;
+import org.mdev.revolution.database.DatabaseModule;
 import org.mdev.revolution.database.dao.PlayerDao;
 import org.mdev.revolution.database.domain.Player;
 
+import javax.inject.Inject;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public final class PlayerService {
+public class PlayerService {
     private static final Logger logger = LogManager.getLogger(PlayerService.class);
 
-    private static final PlayerDao playerDao = new PlayerDao();
+    private static final PlayerService INSTANCE = new PlayerService();
+
+    public static PlayerService getInstance() {
+        return PlayerService.INSTANCE;
+    }
+
+    @Inject
+    private PlayerDao playerDao;
+
     @SuppressWarnings("unchecked")
-    public static PlayerDao getPlayerDao() {
+    public PlayerDao getPlayerDao() {
         return playerDao;
     }
 
-    public static void save(Player player) {
+    public PlayerService() {
+        Injector injector = Guice.createInjector(new DatabaseModule());
+        injector.injectMembers(this);
+    }
+
+    @SuppressWarnings("unchecked")
+    public void save(Player player) {
         playerDao.save(player);
     }
 
-    public static Player findPlayer(String ssoTicket) {
+    public Player findPlayer(String ssoTicket) {
         if (ssoTicket.contains(SSOTicketMessageEvent.TICKET_DELIMITER)) {
             ssoTicket = ssoTicket.split(SSOTicketMessageEvent.TICKET_DELIMITER)[1];
 
