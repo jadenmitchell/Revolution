@@ -4,11 +4,20 @@ import org.mdev.revolution.communication.packets.outgoing.ServerPacket;
 import org.mdev.revolution.communication.packets.outgoing.ServerPacketHeader;
 import org.mdev.revolution.game.players.effects.AvatarEffect;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class AvatarEffectsMessageComposer extends ServerPacket {
+    @NotNull
     public AvatarEffectsMessageComposer(List<AvatarEffect> effects) {
         super(ServerPacketHeader.AvatarEffectsMessageComposer);
+
+        // Until Avatar Effects are cached
+        if (effects == null) {
+            super.writeInt(0);
+            return;
+        }
+
         super.writeInt(effects.size());
         effects.forEach((effect) -> {
             super.writeInt(effect.getSpriteId());

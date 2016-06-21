@@ -11,8 +11,6 @@ import org.apache.logging.log4j.Logger;
 import org.mdev.revolution.communication.encryption.HabboEncryption;
 import org.mdev.revolution.communication.packets.PacketManager;
 import org.mdev.revolution.database.DatabaseManager;
-import org.mdev.revolution.database.domain.Player;
-import org.mdev.revolution.game.players.PlayerService;
 import org.mdev.revolution.network.Server;
 import org.mdev.revolution.network.sessions.SessionManager;
 import org.mdev.revolution.utilities.Configuration;
@@ -141,8 +139,6 @@ public class Revolution {
 
         Thread hook = new Thread(Revolution::shutdown);
         Runtime.getRuntime().addShutdownHook(hook);
-
-        PlayerService.getInstance().findPlayer("542abedcbca62eb7d0220b32a5b88689");
 
         while (true) {}
     }

@@ -13,6 +13,9 @@ public class Player implements Serializable {
     @Column(name = "mail", unique = true, nullable = false)
     private String email;
 
+    @Column(name = "username", unique = true, nullable = false)
+    private String username;
+
     public Player() {
         super();
     }
@@ -23,6 +26,10 @@ public class Player implements Serializable {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getUsername() {
+        return username;
     }
 }
 

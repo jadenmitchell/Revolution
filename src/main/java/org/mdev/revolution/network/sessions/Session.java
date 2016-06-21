@@ -7,13 +7,18 @@ import org.apache.logging.log4j.Logger;
 import org.mdev.revolution.Revolution;
 import org.mdev.revolution.communication.encryption.ARC4;
 import org.mdev.revolution.communication.packets.outgoing.ServerPacket;
+import org.mdev.revolution.communication.packets.outgoing.inventory.achievements.AchievementsComposer;
+import org.mdev.revolution.communication.packets.outgoing.inventory.achievements.AchievementsScoreComposer;
 import org.mdev.revolution.communication.packets.outgoing.availability.AvailabilityStatusMessageComposer;
+import org.mdev.revolution.communication.packets.outgoing.catalog.BuildersClubSubscriptionStatusMessageComposer;
 import org.mdev.revolution.communication.packets.outgoing.handshake.AuthenticationOKComposer;
 import org.mdev.revolution.communication.packets.outgoing.handshake.UserRightsMessageComposer;
 import org.mdev.revolution.communication.packets.outgoing.inventory.avatareffect.AvatarEffectsMessageComposer;
+import org.mdev.revolution.communication.packets.outgoing.moderation.CfhChatlogComposer;
 import org.mdev.revolution.communication.packets.outgoing.navigator.NavigatorSettingsComposer;
 import org.mdev.revolution.communication.packets.outgoing.notifications.HabboBroadcastMessageComposer;
 import org.mdev.revolution.communication.packets.outgoing.notifications.MOTDNotificationComposer;
+import org.mdev.revolution.communication.packets.outgoing.preferences.AccountPreferencesComposer;
 import org.mdev.revolution.database.domain.Player;
 import org.mdev.revolution.game.players.PlayerBean;
 import org.mdev.revolution.game.players.PlayerService;
@@ -35,6 +40,10 @@ public class Session {
         return rc4;
     }
 
+    public PlayerBean getPlayerBean() {
+        return playerBean;
+    }
+
     public Session(Channel channel) {
         this.channel = channel;
     }
@@ -49,17 +58,24 @@ public class Session {
                 return false;
             }
 
-            PlayerService.removeSSOTicket(player.getId());
+            //PlayerService.removeSSOTicket(player.getId());
+            PlayerService.getInstance().save(player);
 
             playerBean = new PlayerBean(player);
 
             sendQueued(new AuthenticationOKComposer())
-                    .sendQueued(new AvailabilityStatusMessageComposer())
+                    .sendQueued(new AvatarEffectsMessageComposer(null))
                     .sendQueued(new NavigatorSettingsComposer(0)) // HOMEROOM
                     .sendQueued(new UserRightsMessageComposer(true, true, false)) // CLUB, VIP, AMBASSADOR SETTINGS
-                    .sendQueued(new AvatarEffectsMessageComposer(null))
-                    .sendQueued(new MOTDNotificationComposer(Revolution.getConfig().getOrDefault("motd", DefaultConfig.motd)))
+                    .sendQueued(new AvailabilityStatusMessageComposer())
+                    .sendQueued(new AchievementsScoreComposer(0))
+                    .sendQueued(new BuildersClubSubscriptionStatusMessageComposer())
+                    .sendQueued(new CfhChatlogComposer())
+                    .sendQueued(new AchievementsComposer())
+                    .sendQueued(new AccountPreferencesComposer())
                     .getChannel().flush();
+
+            sendPacket(new MOTDNotificationComposer(Revolution.getConfig().getOrDefault("motd", DefaultConfig.motd)));
         }
         catch (Exception e) {
             logger.error("Bug during user login.", e);

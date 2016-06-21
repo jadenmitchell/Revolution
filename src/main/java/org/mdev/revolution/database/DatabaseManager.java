@@ -12,14 +12,11 @@ import org.hibernate.cfg.Environment;
 import org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorBuilderImpl;
 import org.hibernate.service.ServiceRegistry;
 import org.mdev.revolution.Revolution;
-import org.mdev.revolution.utilities.jndi.XjbInitialContextFactory;
-import org.mdev.revolution.utilities.jndi.XjbInitialContextFactoryBuilder;
 
 import javax.inject.Inject;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.naming.spi.InitialContextFactoryBuilder;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -49,7 +46,7 @@ public class DatabaseManager {
                 //.applySetting(Environment.CONNECTION_PROVIDER, "com.zaxxer.hikari.hibernate.HikariConnectionProvider")
                 .applySetting(Environment.SESSION_FACTORY_NAME, dataSource.getDataSourceJNDI())
                 .applySetting(Environment.SESSION_FACTORY_NAME_IS_JNDI, "true")
-                .applySetting(Environment.TRANSACTION_COORDINATOR_STRATEGY, JtaTransactionCoordinatorBuilderImpl.class)
+                //.applySetting(Environment.TRANSACTION_COORDINATOR_STRATEGY, JtaTransactionCoordinatorBuilderImpl.class)
                 .applySetting(Environment.DIALECT, "org.hibernate.dialect." + (Revolution.getConfig().getString("mysql.dialect").equals("innodb") ? "MySQLInnoDBDialect" : "MySQLDialect"))
                 .applySetting(Environment.DATASOURCE, dataSource)
                 .build();
@@ -58,12 +55,19 @@ public class DatabaseManager {
 
     private void setupInitialContext() {
         //"jdbc/default
+        System.setProperty(Context.INITIAL_CONTEXT_FACTORY, "org.apache.naming.java.javaURLContextFactory");
+        System.setProperty(Context.URL_PKG_PREFIXES, "org.apache.naming");
+
         try {
-            XjbInitialContextFactory xjbInitialContextFactory = new XjbInitialContextFactory();
-            xjbInitialContextFactory.register("jdbc/default", dataSource);
-        }
-        catch(NamingException e) {
-            logger.error("Error while binding the Hikari DataSource to the JNDI Context", e);
+            final Context ctx = new InitialContext();
+            ctx.createSubcontext("java:");
+            ctx.createSubcontext("java:comp");
+            ctx.createSubcontext("java:comp/env");
+            ctx.createSubcontext("java:comp/env/jdbc");
+            ctx.bind("java:comp/env/jdbc/default", dataSource);
+            ctx.close();
+        } catch(NamingException e) {
+            logger.error("There was an error while trying to bind the DataSource to the context", e);
             System.exit(0); // fatal error
         }
     }

@@ -14,7 +14,12 @@ dependencies {
 
     compile group: 'org.reflections', name: 'reflections', version: '0.9.10'
     compile group: 'net.sf.trove4j', name: 'trove4j', version: '3.0.3'
-
+    compile group: 'org.apache.tomcat', name: 'tomcat-catalina', version: '9.0.0.M8', {
+        exclude module: "tomcat-coyote"
+        exclude module: "tomcat-servlet-api"
+        exclude module: "tomcat-jni"
+    }
+    
     // DEPENDENCY INJECTION
     compile group: 'com.google.inject', name: 'guice', version: '4.0'
     compile group: 'com.google.inject.extensions', name: 'guice-persist', version: '4.0'
