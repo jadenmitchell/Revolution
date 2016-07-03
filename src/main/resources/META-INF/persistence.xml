@@ -4,17 +4,15 @@
              version="2.0">
     <persistence-unit name="org.mdev.revolution.jpa" transaction-type="RESOURCE_LOCAL"> <!-- JTA -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <jta-data-source>java:comp/env/jdbc/default</jta-data-source>
         <class>org.mdev.revolution.database.domain.Player</class>
         <properties>
             <!-- Disable the second-level cache  -->
             <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
 
-            <!-- Important, Database Connection Provider -->
-            <!--<property name="hibernate.connection.provider_class"
-                      value="com.zaxxer.hikari.hibernate.HikariConnectionProvider" />
-                      -->
+            <!-- Important, JTA Transaction Platform -->
+            <!--<property name="hibernate.transaction.jta.platform"
+                      value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform"/>-->
 
             <property name="hibernate.connection.datasource" value="java:comp/env/jdbc/default"/>
 

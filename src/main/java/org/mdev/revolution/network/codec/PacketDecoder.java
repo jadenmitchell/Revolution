@@ -22,9 +22,9 @@ public class PacketDecoder extends MessageToMessageDecoder<ByteBuf> {
         }
 
         int length = buffer.readInt();
-        /*if (length > 5120 && (length >> 24 != 60)) {
+        if (length > 5120 && (length >> 24 != 60)) {
             ctx.close();
-        }*/
+        }
         short header = buffer.readShort();
 
         Session session = Revolution.getInstance().getSessionManager().getSessionByChannel(ctx.channel());

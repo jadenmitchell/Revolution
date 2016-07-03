@@ -25,22 +25,9 @@ public class PlayerService {
         return PlayerService.INSTANCE;
     }
 
-    @Inject
-    private PlayerDao playerDao;
-
-    @SuppressWarnings("unchecked")
-    public PlayerDao getPlayerDao() {
-        return playerDao;
-    }
-
-    public PlayerService() {
-        Injector injector = Guice.createInjector(new DatabaseModule());
-        injector.injectMembers(this);
-    }
-
     @SuppressWarnings("unchecked")
     public void save(Player player) {
-        playerDao.save(player);
+        Revolution.getInstance().getGame().getPlayerDao().save(player);
     }
 
     public Player findPlayer(String ssoTicket) {
@@ -73,8 +60,7 @@ public class PlayerService {
             return null;
         }
 
-        System.out.println("PLAYER ID: " + playerId);
-        return playerDao.findByPropertyUnique("id", playerId);
+        return Revolution.getInstance().getGame().getPlayerDao().findByPropertyUnique("id", playerId);
     }
 
     public static void removeSSOTicket(int playerId) {

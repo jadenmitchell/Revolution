@@ -4,7 +4,7 @@ import org.mdev.revolution.communication.packets.outgoing.ServerPacket;
 import org.mdev.revolution.communication.packets.outgoing.ServerPacketHeader;
 
 public class UserRightsMessageComposer extends ServerPacket {
-    public UserRightsMessageComposer(boolean hasClub, boolean hasVip, boolean isAmbassador) {
+    public UserRightsMessageComposer(int rank, boolean hasClub, boolean hasVip, boolean isAmbassador) {
         super(ServerPacketHeader.UserRightsMessageComposer);
 
         if (!hasClub && hasVip) {
@@ -17,6 +17,7 @@ public class UserRightsMessageComposer extends ServerPacket {
             super.writeInt(0);
         }
 
+        super.writeInt(rank);
         super.writeBoolean(isAmbassador);
     }
 }

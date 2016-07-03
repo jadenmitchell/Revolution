@@ -32,6 +32,7 @@ public class SessionManager {
 
     public void removeSession(Channel channel) {
         Session session = getSessionByChannel(channel);
+        session.disconnect();
         sessions.remove(channel);
     }
 }

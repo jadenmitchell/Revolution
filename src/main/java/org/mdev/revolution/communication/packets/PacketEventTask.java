@@ -8,13 +8,13 @@ import org.mdev.revolution.network.sessions.Session;
 
 import java.lang.reflect.InvocationTargetException;
 
-public class PacketEventTask implements Runnable {
+class PacketEventTask implements Runnable {
     private static final Logger logger = LogManager.getLogger(PacketEventTask.class);
 
     private Session session;
     private ClientPacket packet;
 
-    public PacketEventTask(Session session, ClientPacket packet) {
+    PacketEventTask(Session session, ClientPacket packet) {
         this.session = session;
         this.packet = packet;
     }
@@ -24,10 +24,10 @@ public class PacketEventTask implements Runnable {
         try {
             long start = System.currentTimeMillis();
             Revolution.getInstance().getPacketManager().getPacketHandler(packet.getHeader()).invoke(null, session, packet);
-            long elapsed = System.currentTimeMillis() - start;
+            long elapsed = (System.currentTimeMillis() - start);
 
             if (elapsed >= 750) {
-                logger.trace("[" + Revolution.getInstance().getPacketManager().getDeclaringClass(packet.getHeader()) + "] Time taken to execute packet: " + elapsed);
+                logger.trace("[" + Revolution.getInstance().getPacketManager().getDeclaringClass(packet.getHeader()) + "] Time taken to execute packet: {0}ms", elapsed);
             }
             logger.debug("[" + Revolution.getInstance().getPacketManager().getDeclaringClass(packet.getHeader()) + "] Executed Packet: " + packet.getHeader());
             cleanup();
@@ -40,7 +40,7 @@ public class PacketEventTask implements Runnable {
         }
     }
 
-    protected void cleanup() {
+    private void cleanup() {
         session = null;
         packet = null;
         System.gc();

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="org.mdev.revolution.jpa/Hibernate" uuid="d9e77d38-196a-4517-84e8-9ad31d3940fd">
+      <schema-pattern>rev_db.*</schema-pattern>
+      <default-schemas>rev_db.*</default-schemas>
+    </data-source>
+  </component>
+</project>

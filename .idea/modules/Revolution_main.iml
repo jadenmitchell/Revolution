@@ -15,16 +15,9 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="" />
         <datasource-mapping>
-          <factory-entry name="org.mdev.revolution.jpa" />
+          <factory-entry name="org.mdev.revolution.jpa" value="d9e77d38-196a-4517-84e8-9ad31d3940fd" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/../../src/main/resources/META-INF/persistence.xml" />
-      </configuration>
-    </facet>
-    <facet type="javaeeApplication" name="javaEEApplication">
-      <configuration>
-        <descriptors>
-          <deploymentDescriptor name="application.xml" url="file://$MODULE_DIR$/META-INF/application.xml" />
-        </descriptors>
       </configuration>
     </facet>
   </component>
@@ -39,9 +32,10 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Gradle: org.reflections:reflections:0.9.10" level="project" />
     <orderEntry type="library" name="Gradle: net.sf.trove4j:trove4j:3.0.3" level="project" />
+    <orderEntry type="library" name="Gradle: com.typesafe.akka:akka-actor_2.11:2.4.7" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-catalina:9.0.0.M8" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.inject:guice:4.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.inject.extensions:guice-persist:4.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.inject:guice:4.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.inject.extensions:guice-persist:4.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.netflix.governator:governator:1.12.13" level="project" />
     <orderEntry type="library" name="Gradle: com.netflix.governator:governator-archaius:1.12.13" level="project" />
     <orderEntry type="library" name="Gradle: com.mycila.guice.extensions:mycila-guice-jsr250:3.2.ga" level="project" />
@@ -52,8 +46,10 @@
     <orderEntry type="library" name="Gradle: com.zaxxer:HikariCP:2.4.6" level="project" />
     <orderEntry type="library" name="Gradle: org.hibernate:hibernate-core:5.1.0.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.hibernate:hibernate-entitymanager:5.1.0.Final" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.guava:guava:18.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.findbugs:annotations:2.0.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.scala-lang:scala-library:2.11.8" level="project" />
+    <orderEntry type="library" name="Gradle: com.typesafe:config:1.3.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.scala-lang.modules:scala-java8-compat_2.11:0.7.0" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-jsp-api:9.0.0.M8" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-juli:9.0.0.M8" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-annotations-api:9.0.0.M8" level="project" />
@@ -92,6 +88,7 @@
     <orderEntry type="library" name="Gradle: com.google.inject.extensions:guice-assistedinject:4.0" level="project" />
     <orderEntry type="library" name="Gradle: commons-lang:commons-lang:2.6" level="project" />
     <orderEntry type="library" name="Gradle: commons-logging:commons-logging:1.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.guava:guava:19.0" level="project" />
     <orderEntry type="library" name="Gradle: org.javassist:javassist:3.20.0-GA" level="project" />
     <orderEntry type="library" name="Gradle: org.sonatype.sisu:sisu-guice:3.2.3" level="project" />
   </component>

@@ -44,11 +44,11 @@ public class DatabaseManager {
         ServiceRegistry serviceRegistry
                 = new StandardServiceRegistryBuilder()
                 //.applySetting(Environment.CONNECTION_PROVIDER, "com.zaxxer.hikari.hibernate.HikariConnectionProvider")
+                //.applySetting(Environment.TRANSACTION_COORDINATOR_STRATEGY, JtaTransactionCoordinatorBuilderImpl.class)
+                .applySetting(Environment.DATASOURCE, dataSource)
                 .applySetting(Environment.SESSION_FACTORY_NAME, dataSource.getDataSourceJNDI())
                 .applySetting(Environment.SESSION_FACTORY_NAME_IS_JNDI, "true")
-                //.applySetting(Environment.TRANSACTION_COORDINATOR_STRATEGY, JtaTransactionCoordinatorBuilderImpl.class)
                 .applySetting(Environment.DIALECT, "org.hibernate.dialect." + (Revolution.getConfig().getString("mysql.dialect").equals("innodb") ? "MySQLInnoDBDialect" : "MySQLDialect"))
-                .applySetting(Environment.DATASOURCE, dataSource)
                 .build();
         sessionFactory = configuration.buildSessionFactory(serviceRegistry);
     }

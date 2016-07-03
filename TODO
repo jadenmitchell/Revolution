@@ -1,0 +1,4 @@
+TODO:
+- Fix Hotelview Widgets, Create database table(s)
+- Add Navigator Packet Handlers, Create database table(s)
+- Begin working on A* Jump-Point Search PathFinder implementation

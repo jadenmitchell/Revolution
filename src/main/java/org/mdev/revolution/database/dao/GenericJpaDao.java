@@ -1,13 +1,7 @@
 package org.mdev.revolution.database.dao;
 
-import com.google.inject.AbstractModule;
-import com.google.inject.Guice;
-import com.google.inject.Injector;
 import com.google.inject.persist.Transactional;
-import com.google.inject.persist.jpa.JpaPersistModule;
 import org.hibernate.CacheMode;
-import org.mdev.revolution.Revolution;
-import org.mdev.revolution.database.DatabaseModule;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;

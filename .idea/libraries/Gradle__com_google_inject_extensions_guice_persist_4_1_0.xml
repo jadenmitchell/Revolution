@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.inject.extensions:guice-persist:4.1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.inject.extensions/guice-persist/4.1.0/e9548d44944c6f79de178cd313aff22ba55dec5c/guice-persist-4.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.inject.extensions/guice-persist/4.1.0/e2ee5a73a7e77ca8d81b86ca7cfc5efae2c366fd/guice-persist-4.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

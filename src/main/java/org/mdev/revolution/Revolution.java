@@ -11,6 +11,7 @@ import org.apache.logging.log4j.Logger;
 import org.mdev.revolution.communication.encryption.HabboEncryption;
 import org.mdev.revolution.communication.packets.PacketManager;
 import org.mdev.revolution.database.DatabaseManager;
+import org.mdev.revolution.game.Game;
 import org.mdev.revolution.network.Server;
 import org.mdev.revolution.network.sessions.SessionManager;
 import org.mdev.revolution.utilities.Configuration;
@@ -50,6 +51,7 @@ public class Revolution {
     }
 
     private Server server;
+    private Game game;
     private DatabaseManager databaseManager;
     private SessionManager sessionManager;
     private PacketManager packetManager;
@@ -83,6 +85,8 @@ public class Revolution {
         HabboEncryption.initialize(N, E, D);
 
         getInstance().sessionManager = new SessionManager();
+        getInstance().game = new Game();
+
         getInstance().getServer().start();
         Thread.currentThread().setPriority(Thread.NORM_PRIORITY);
     }
@@ -96,6 +100,10 @@ public class Revolution {
             }
         }
         return server;
+    }
+
+    public Game getGame() {
+        return game;
     }
 
     public DatabaseManager getDatabaseManager() {
@@ -144,9 +152,10 @@ public class Revolution {
     }
 
     private static void shutdown() {
-        Revolution.getInstance().getServer().stop();
-        Revolution.getInstance().getDatabaseManager().dispose();
+        //Revolution.getInstance().getGame().dispose();
         Revolution.getInstance().getPacketManager().dispose();
+        Revolution.getInstance().getDatabaseManager().dispose();
+        Revolution.getInstance().getServer().stop();
     }
 
     public static String dateToUnixTimestamp(Date fecha) {

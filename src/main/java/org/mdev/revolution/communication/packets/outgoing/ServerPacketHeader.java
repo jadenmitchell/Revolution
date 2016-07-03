@@ -19,4 +19,12 @@ public final class ServerPacketHeader {
     public static final short AccountPreferencesComposer = 2921;
     public static final short UserObjectComposer = 1823;
     public static final short NoobnessLevelMessageComposer = 2807;
+    public static final short PromoArticlesMessageComposer = 3565;
+    public static final short CampaignMessageComposer = 3234;
+    public static final short UserFlatCatsComposer = 377;
+    public static final short NavigatorMetaDataComposer = 371;
+    public static final short NavigatorLiftedRoomsComposer = 761;
+    public static final short NavigatorCollapsedCategoriesMessageComposer = 1263;
+    public static final short NewNavigatorPreferencesComposer = 1430;
+    public static final short SearchResultSet = 815;
 }

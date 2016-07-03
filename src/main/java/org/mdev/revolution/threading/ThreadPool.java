@@ -2,7 +2,6 @@ package org.mdev.revolution.threading;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.mdev.revolution.monitoring.ThreadMonitor;
 
 import java.util.concurrent.*;
 
@@ -47,7 +46,7 @@ public class ThreadPool {
     }
 
     public void dispose() {
-        logger.debug(ThreadMonitor.getExecutorActivity(defaultExecutor));
+        //logger.debug(ThreadMonitor.getExecutorActivity(defaultExecutor));
         scheduledExecutor.shutdown();
         defaultExecutor.shutdown();
         try {

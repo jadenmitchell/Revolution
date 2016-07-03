@@ -5,9 +5,6 @@
 <hibernate-configuration>
 
     <session-factory>
-        <!-- Hibernate connection dialect -->
-        <property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
-
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
 

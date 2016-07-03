@@ -1,6 +1,5 @@
 package org.mdev.revolution.communication.packets.incoming.handshake;
 
-import org.mdev.revolution.communication.encryption.HabboEncryption;
 import org.mdev.revolution.communication.packets.PacketEvent;
 import org.mdev.revolution.communication.packets.incoming.ClientPacket;
 import org.mdev.revolution.communication.packets.incoming.ClientPacketHeader;

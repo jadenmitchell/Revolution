@@ -51,14 +51,13 @@ public class Session {
     public boolean tryLogin(String ssoTicket) {
         try {
             logger.info("logging in...");
-            //ssoTicket = ESAPI.encoder().encodeForSQL(new OracleCodec(), ssoTicket);
             Player player = PlayerService.getInstance().findPlayer(ssoTicket);
             if (player == null) {
                 sendPacket(new HabboBroadcastMessageComposer("No player found with your session ticket"));
                 return false;
             }
 
-            //PlayerService.removeSSOTicket(player.getId());
+            PlayerService.removeSSOTicket(player.getId());
             PlayerService.getInstance().save(player);
 
             playerBean = new PlayerBean(player);
@@ -66,7 +65,7 @@ public class Session {
             sendQueued(new AuthenticationOKComposer())
                     .sendQueued(new AvatarEffectsMessageComposer(null))
                     .sendQueued(new NavigatorSettingsComposer(0)) // HOMEROOM
-                    .sendQueued(new UserRightsMessageComposer(true, true, false)) // CLUB, VIP, AMBASSADOR SETTINGS
+                    .sendQueued(new UserRightsMessageComposer(0, true, true, false)) // CLUB, VIP, AMBASSADOR SETTINGS
                     .sendQueued(new AvailabilityStatusMessageComposer())
                     .sendQueued(new AchievementsScoreComposer(0))
                     .sendQueued(new BuildersClubSubscriptionStatusMessageComposer())
@@ -76,14 +75,13 @@ public class Session {
                     .getChannel().flush();
 
             sendPacket(new MOTDNotificationComposer(Revolution.getConfig().getOrDefault("motd", DefaultConfig.motd)));
+            return true;
         }
         catch (Exception e) {
             logger.error("Bug during user login.", e);
             disconnect();
             return false;
         }
-
-        return false;
     }
 
     public void sendPacket(ServerPacket packet) {
@@ -91,7 +89,7 @@ public class Session {
     }
 
     public Session sendQueued(ServerPacket packet) {
-        channel.write(packet).addListener(ChannelFutureListener.CLOSE);
+        channel.write(packet);
         return this;
     }
 
