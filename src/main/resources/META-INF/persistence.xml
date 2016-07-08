@@ -5,6 +5,8 @@
     <persistence-unit name="org.mdev.revolution.jpa" transaction-type="RESOURCE_LOCAL"> <!-- JTA -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>org.mdev.revolution.database.domain.Player</class>
+        <class>org.mdev.revolution.database.domain.navigator.FlatCat</class>
+        <class>org.mdev.revolution.database.domain.landingview.Promotion</class>
         <properties>
             <!-- Disable the second-level cache  -->
             <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>

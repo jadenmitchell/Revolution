@@ -14,6 +14,7 @@ import org.mdev.revolution.database.DatabaseManager;
 import org.mdev.revolution.game.Game;
 import org.mdev.revolution.network.Server;
 import org.mdev.revolution.network.sessions.SessionManager;
+import org.mdev.revolution.threading.ThreadPool;
 import org.mdev.revolution.utilities.Configuration;
 
 import java.io.File;
@@ -21,6 +22,7 @@ import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.Executors;
 
 @Singleton
 public class Revolution {
@@ -34,6 +36,7 @@ public class Revolution {
     private static Injector injector;
     private static Configuration config;
     private static Revolution instance;
+    private static ThreadPool globalThreadPool;
 
     public static Revolution getInstance() {
         if (instance == null) {
@@ -48,6 +51,10 @@ public class Revolution {
 
     public static Configuration getConfig() {
         return config;
+    }
+
+    public static ThreadPool getGlobalThreadPool() {
+        return globalThreadPool;
     }
 
     private Server server;
@@ -67,6 +74,8 @@ public class Revolution {
 
     private static void loadEverythingElse() {
         Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
+
+        globalThreadPool = new ThreadPool(Executors.newFixedThreadPool(3));
         injector = LifecycleInjector
                 .builder()
                 .usingBasePackages("org.mdev.revolution")
@@ -139,6 +148,7 @@ public class Revolution {
         }
 
         long start = System.currentTimeMillis();
+
         loadConfiguration(configFile);
         loadEverythingElse();
 
@@ -152,6 +162,7 @@ public class Revolution {
     }
 
     private static void shutdown() {
+        globalThreadPool.dispose();
         //Revolution.getInstance().getGame().dispose();
         Revolution.getInstance().getPacketManager().dispose();
         Revolution.getInstance().getDatabaseManager().dispose();

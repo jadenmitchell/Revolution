@@ -1,5 +1,7 @@
 package org.mdev.revolution.database.domain;
 
+import org.mdev.revolution.game.players.PlayerGender;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -16,6 +18,10 @@ public class Player implements Serializable {
     @Column(name = "username", unique = true, nullable = false)
     private String username;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "gender", nullable = false)
+    private PlayerGender gender;
+
     public Player() {
         super();
     }
@@ -30,6 +36,10 @@ public class Player implements Serializable {
 
     public String getUsername() {
         return username;
+    }
+
+    public PlayerGender getGender() {
+        return gender;
     }
 }
 

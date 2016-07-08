@@ -27,4 +27,7 @@ public final class ServerPacketHeader {
     public static final short NavigatorCollapsedCategoriesMessageComposer = 1263;
     public static final short NewNavigatorPreferencesComposer = 1430;
     public static final short SearchResultSet = 815;
+    public static final short CreditBalanceComposer = 3604;
+    public static final short ActivityPointsMessageComposer = 1911;
+    public static final short RoomForwardMessageComposer = 1963;
 }

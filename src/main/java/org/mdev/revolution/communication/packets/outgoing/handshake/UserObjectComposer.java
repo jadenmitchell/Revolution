@@ -9,8 +9,8 @@ public class UserObjectComposer extends ServerPacket {
         super(ServerPacketHeader.UserObjectComposer);
         super.writeInt(playerBean.getPlayer().getId());
         super.writeString(playerBean.getPlayer().getUsername());
-        super.writeString(""); // Look
-        super.writeString("M"); // Gender
+        super.writeString("lg-285-64.hd-209-1.hr-100-61.sh-300-1408.cc-260-1408.ch-12667435-1408"); // Look
+        super.writeString(playerBean.getPlayer().getGender().toString()); // Gender
         super.writeString("Revolution Server Developer"); // Motto
         super.writeString("");
         super.writeBoolean(false);

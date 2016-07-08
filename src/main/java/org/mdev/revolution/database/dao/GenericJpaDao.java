@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Locale;
 
 @SuppressWarnings("unchecked")
-public abstract class GenericJpaDao<T, K extends Serializable> {
+public class GenericJpaDao<T, K extends Serializable> {
     @Inject
     @PersistenceContext
     private EntityManager entityManager;
