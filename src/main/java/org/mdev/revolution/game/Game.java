@@ -7,6 +7,8 @@ import org.mdev.revolution.database.DatabaseModule;
 import org.mdev.revolution.database.dao.LandingViewDao;
 import org.mdev.revolution.database.dao.NavigatorDao;
 import org.mdev.revolution.database.dao.PlayerDao;
+import org.mdev.revolution.database.dao.RoomDao;
+import org.mdev.revolution.game.rooms.RoomManager;
 
 import javax.inject.Inject;
 
@@ -21,9 +23,16 @@ public class Game {
     @Inject
     private NavigatorDao navigatorDao;
 
+    @Inject
+    private RoomDao roomDao;
+
+    private RoomManager roomManager;
+
     public Game() {
         Injector injector = Guice.createInjector(new DatabaseModule());
         injector.injectMembers(this);
+
+        roomManager = new RoomManager();
     }
 
     @SuppressWarnings("unchecked")
@@ -39,5 +48,14 @@ public class Game {
     @SuppressWarnings("unchecked")
     public NavigatorDao getNavigatorDao() {
         return navigatorDao;
+    }
+
+    @SuppressWarnings("unchecked")
+    public RoomDao getRoomDao() {
+        return roomDao;
+    }
+
+    public RoomManager getRoomManager() {
+        return roomManager;
     }
 }

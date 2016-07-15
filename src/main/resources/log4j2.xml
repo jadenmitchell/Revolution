@@ -4,12 +4,22 @@
         <console name="default.console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
         </console>
-        <file name="default.file" fileName="RevolutionServer.log" immediateFlush="false" append="false">
+        <file name="default.file" fileName="logs/RevolutionServer.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </file>
+        <file name="error.file" fileName="logs/Revolution_Errors.log" immediateFlush="false" append="false">
             <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </file>
     </appenders>
     <loggers>
         <root level="debug">
+            <AppenderRef ref="default.file"/>
+        </root>
+        <root level="error">
+            <AppenderRef ref="default.console" />
+            <AppenderRef ref="error.file"/>
+        </root>
+        <root level="info">
             <AppenderRef ref="default.console" />
             <AppenderRef ref="default.file"/>
         </root>

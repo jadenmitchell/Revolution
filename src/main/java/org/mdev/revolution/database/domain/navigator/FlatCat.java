@@ -19,7 +19,7 @@ public class FlatCat implements Serializable {
     private String publicName;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "category", nullable = false)
+    @Column(nullable = false)
     private NavigatorCategory category;
 
     @Enumerated(EnumType.STRING)

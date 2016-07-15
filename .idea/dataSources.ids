@@ -6,31 +6,33 @@
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
-    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
-      <schema id="1" name="rev_db"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="rev_db">
+        <visible>1</visible>
+      </schema>
       <table id="2" parent="1" name="users"/>
       <column id="3" parent="2" name="id">
         <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
+        <data-type>int(11)|0</data-type>
       </column>
       <column id="4" parent="2" name="username">
         <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
+        <data-type>varchar(255)|0</data-type>
       </column>
       <column id="5" parent="2" name="password">
         <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
+        <data-type>varchar(255)|0</data-type>
       </column>
       <column id="6" parent="2" name="birthdate">
         <mandatory>1</mandatory>
-        <data-type>date</data-type>
+        <data-type>date|0</data-type>
       </column>
       <column id="7" parent="2" name="mail">
         <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
+        <data-type>varchar(255)|0</data-type>
       </column>
       <column id="8" parent="2" name="auth_ticket">
-        <data-type>varchar(125)</data-type>
+        <data-type>varchar(125)|0</data-type>
       </column>
       <key id="9" parent="2" name="PRIMARY">
         <columns>id</columns>

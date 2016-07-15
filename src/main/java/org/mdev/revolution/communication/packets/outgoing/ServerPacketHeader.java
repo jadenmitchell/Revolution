@@ -18,7 +18,7 @@ public final class ServerPacketHeader {
     public static final short CfhChatlogComposer = 2067;
     public static final short AccountPreferencesComposer = 2921;
     public static final short UserObjectComposer = 1823;
-    public static final short NoobnessLevelMessageComposer = 2807;
+    public static final short PerkAllowancesMessageComposer = 2807;
     public static final short PromoArticlesMessageComposer = 3565;
     public static final short CampaignMessageComposer = 3234;
     public static final short UserFlatCatsComposer = 377;
@@ -29,5 +29,8 @@ public final class ServerPacketHeader {
     public static final short SearchResultSet = 815;
     public static final short CreditBalanceComposer = 3604;
     public static final short ActivityPointsMessageComposer = 1911;
+    public static final short RoomReadyMessageComposer = 1948;
     public static final short RoomForwardMessageComposer = 1963;
+    public static final short RoomRatingComposer = 250;
+    public static final short OpenConnectionMessageComposer = 2273;
 }

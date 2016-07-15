@@ -7,32 +7,72 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4714463-c123-4099-953f-b4acaeebf15a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/inventory/purse/GetCreditsInfoEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/tracking/LatencyPingRequestMessageEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/inventory/purse/CreditBalanceComposer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/notifications/ActivityPointsMessageComposer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/room/session/RoomForwardMessageComposer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/LandingViewDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/landingview/Promotion.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/PlayerGender.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomActor.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/JpaDao.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/room/session/OpenFlatConnectionEvent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/roomdirectory/RoomNetworkOpenConnectionEvent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/navigator/RoomRatingComposer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/room/session/OpenConnectionComposer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/room/session/RoomReadyComposer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/converters/StringListConverter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/RoomDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/rooms/Room.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/rooms/RoomModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomAccess.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomBean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomModelType.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomType.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/avatar/RoomAvatar.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/avatar/RoomAvatarType.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/mapping/RoomTileState.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/mapping/pathfinding/Heuristic.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RevolutionServer.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/PlayerService.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/game/lobby/GetGameListMessageEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/game/lobby/GetGameListEvent.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/CompleteDiffieHandshakeMessageEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/CompleteDiffieHandshakeEvent.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/InfoRetrieveMessageEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/InfoRetrieveEvent.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/InitDiffieHandshakeMessageEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/InitDiffieHandshakeEvent.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/PingMessageEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/PingEvent.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/SSOTicketMessageEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/SSOTicketEvent.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/TryLoginMessageEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/TryLoginEvent.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/UniqueIDMessageEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/UniqueIDEvent.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/VersionCheckMessageEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/VersionCheckEvent.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/landingview/votes/CommunityGoalVoteMessageEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/landingview/votes/CommunityGoalVoteEvent.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/navigator/GetUserFlatCatsMessageEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/navigator/GetUserFlatCatsEvent.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/tracking/EventLogMessageEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/tracking/EventLogEvent.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/tracking/LatencyPingRequestMessageEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/tracking/LatencyPingRequestEvent.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/availability/AvailabilityStatusMessageComposer.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/availability/AvailabilityStatusComposer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/catalog/BuildersClubSubscriptionStatusMessageComposer.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/catalog/BuildersClubSubscriptionStatusComposer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/NoobnessLevelMessageComposer.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/PerkAllowancesComposer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/UserRightsMessageComposer.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/UserRightsComposer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/inventory/avatareffect/AvatarEffectsMessageComposer.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/inventory/avatareffect/AvatarEffectsComposer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/landingview/CampaignMessageComposer.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/landingview/CampaignComposer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/landingview/PromoArticlesMessageComposer.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/landingview/PromoArticlesComposer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/newnavigator/NavigatorCollapsedCategoriesMessageComposer.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/newnavigator/NavigatorCollapsedCategoriesComposer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/notifications/ActivityPointsMessageComposer.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/notifications/ActivityPointsComposer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/notifications/HabboBroadcastMessageComposer.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/notifications/HabboBroadcastComposer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/room/session/RoomForwardMessageComposer.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/room/session/RoomForwardComposer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/effects/AvatarEffect.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/avatar/effects/AvatarEffect.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RevolutionServer.log" afterPath="$PROJECT_DIR$/RevolutionServer.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/revolution.properties" afterPath="$PROJECT_DIR$/config/revolution.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/Revolution.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/Revolution.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/PacketManager.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/PacketManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/ClientPacketHeader.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/ClientPacketHeader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/InitDiffieHandshakeMessageEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/InitDiffieHandshakeMessageEvent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/inventory/purse/GetCreditsInfoEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/inventory/purse/GetCreditsInfoEvent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/landingview/GetPromoArticlesEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/landingview/GetPromoArticlesEvent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/landingview/RefreshCampaignEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/landingview/RefreshCampaignEvent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/newnavigator/NewNavigatorInitEvent.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/newnavigator/NewNavigatorInitEvent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/ServerPacketHeader.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/ServerPacketHeader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/UserObjectComposer.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/UserObjectComposer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/landingview/PromoArticlesMessageComposer.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/landingview/PromoArticlesMessageComposer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/DatabaseModule.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/DatabaseModule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/GenericJpaDao.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/GenericJpaDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/NavigatorDao.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/NavigatorDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/PlayerDao.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/PlayerDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/Player.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/landingview/Promotion.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/landingview/Promotion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/navigator/FlatCat.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/navigator/FlatCat.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/Game.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/PlayerBean.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/PlayerBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/codec/XMLPolicyDecoder.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/codec/XMLPolicyDecoder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/sessions/Session.java" afterPath="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/sessions/Session.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
     </list>
     <ignored path="Revolution.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,7 +87,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -69,110 +108,124 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="GenericJpaDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/GenericJpaDao.java">
+      <file leaf-file-name="RoomModelType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomModelType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+            <state relative-caret-position="34">
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/PlayerDao.java">
+      <file leaf-file-name="PacketEventTask.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/PacketEventTask.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PacketManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/PacketManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LandingViewDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/LandingViewDao.java">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="383">
+              <caret line="32" column="53" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoomForwardComposer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/room/session/RoomForwardComposer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
               <folding>
-                <element signature="e#380#381#0" expanded="false" />
-                <element signature="e#432#433#0" expanded="false" />
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/Game.java">
+      <file leaf-file-name="Session.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/sessions/Session.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+            <state relative-caret-position="833">
+              <caret line="78" column="9" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#731#761#0" expanded="true" />
-                <element signature="e#808#809#0" expanded="true" />
-                <element signature="e#845#846#0" expanded="true" />
-                <element signature="e#852#882#0" expanded="true" />
-                <element signature="e#919#920#0" expanded="true" />
-                <element signature="e#951#952#0" expanded="true" />
+                <element signature="e#1948#1949#0" expanded="false" />
+                <element signature="e#1978#1979#0" expanded="false" />
+                <element signature="e#2006#2007#0" expanded="false" />
+                <element signature="e#2032#2033#0" expanded="false" />
+                <element signature="e#2073#2074#0" expanded="false" />
+                <element signature="e#2106#2107#0" expanded="false" />
+                <element signature="e#2145#2146#0" expanded="false" />
+                <element signature="e#2183#2184#0" expanded="false" />
+                <element signature="e#3741#3742#0" expanded="false" />
+                <element signature="e#3786#3787#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Revolution.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/Revolution.java">
+      <file leaf-file-name="RoomNetworkOpenConnectionEvent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/roomdirectory/RoomNetworkOpenConnectionEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="35" column="36" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="36" />
+            <state relative-caret-position="153">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2464#2465#0" expanded="true" />
-                <element signature="e#2503#2504#0" expanded="true" />
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HabboEncryption.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encryption/HabboEncryption.java">
+      <file leaf-file-name="RoomAccess.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomAccess.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoomActor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomActor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoomBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomBean.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RoomForwardMessageComposer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/room/session/RoomForwardMessageComposer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerPacketHeader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/ServerPacketHeader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccountPreferencesComposer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/preferences/AccountPreferencesComposer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="8" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="false" />
+                <element signature="e#352#353#0" expanded="false" />
+                <element signature="e#379#380#0" expanded="false" />
+                <element signature="e#414#415#0" expanded="false" />
+                <element signature="e#445#446#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -186,6 +239,7 @@
         <option value="Interface" />
         <option value="HTML File" />
         <option value="Enum" />
+        <option value="package-info" />
         <option value="Class" />
       </list>
     </option>
@@ -519,57 +573,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/navigator/RoomCategoryType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/navigator/RoomViewMode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/threading/ThreadPool.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/DatabaseManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/PlayerService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/utilities/DefaultConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/navigator/GetUserFlatCatsMessageEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/newnavigator/NavigatorMetaDataComposer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/newnavigator/NavigatorLiftedRoomsComposer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/newnavigator/NavigatorCollapsedCategoriesMessageComposer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/newnavigator/NewNavigatorPreferencesComposer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/newnavigator/NewNavigatorInitEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/navigator/RoomCategory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/navigator/NavigatorCategoryType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/navigator/NavigatorViewMode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/navigator/NavigatorCategory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/navigator/FlatCat.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/navigator/NavigatorSearchAllowance.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/navigator/NavigatorSearchService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/newnavigator/SearchResultSet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/newnavigator/NewNavigatorSearchEvent.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/JpaDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/Room.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomActor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/PlayerDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/DatabaseModule.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/PlayerGender.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/redis/RedisStorage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/tracking/LatencyPingRequestMessageEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/ClientPacketHeader.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/inventory/pursue/CreditBalanceComposer.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/inventory/purse/CreditBalanceComposer.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/notifications/ActivityPointsMessageComposer.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/inventory/purse/GetCreditsInfoEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/UserObjectComposer.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/InitDiffieHandshakeMessageEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/GenericJpaDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/landingview/GetPromoArticlesEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/landingview/PromoArticlesMessageComposer.java" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/landingview/Promotion.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/LandingViewDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/NavigatorDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/Game.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/room/session/RoomForwardMessageComposer.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/navigator/FlatCat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/landingview/Promotion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/converters/StringListConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomAccess.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/rooms/Room.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomModelType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/Heightmap.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/navigator/NavigatorSearchAllowance.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/mapping/pathfinding/Heuristic.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/mapping/RoomMesh.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/mapping/Heightmap.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/mapping/RoomTileState.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/avatar/effects/AvatarEffect.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/avatar/RoomAvatarType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/rooms/RoomModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/codec/XMLPolicyDecoder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/PlayerDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/RoomDao.java" />
         <option value="$PROJECT_DIR$/config/revolution.properties" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/Revolution.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/roomdirectory/RoomNetworkOpenConnectionMessageEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/ClientPacketHeader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/PerkAllowancesMessageComposer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/room/session/OpenFlatConnectionMessageEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/room/session/RoomReadyMessageComposer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/navigator/RoomRatingComposer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/Game.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/PlayerBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/room/session/OpenConnectionMessageComposer.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/ServerPacketHeader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/room/session/RoomForwardMessageComposer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/avatar/RoomAvatar.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/sessions/Session.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/PacketManager.java" />
       </list>
     </option>
   </component>
@@ -587,10 +641,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-45" />
+    <option name="y" value="164" />
+    <option name="width" value="1918" />
+    <option name="height" value="1028" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -618,7 +672,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -647,7 +700,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -661,319 +714,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="network" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="game" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="communication" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="packets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="communication" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="packets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="outgoing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="communication" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="packets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="outgoing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="session" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="communication" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="packets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="outgoing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="preferences" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="communication" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Revolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -990,22 +735,31 @@
               <option name="myItemId" value=".gradle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2.8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taskArtifacts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs.mocha.node_interpreter_path" value="C:\Program Files\nodejs\node.exe" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15390626" />
     <property name="project.structure.side.proportion" value="0.20129271" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -1017,7 +771,7 @@
       <recent name="C:\Users\Jaden\Documents\GitHub\Revolution\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Groovy.gradle:uberjar">
+  <component name="RunManager" selected="Application.Revolution">
     <configuration default="false" name="gradle:uberjar" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
       <module name="Revolution" />
       <setting name="path" value="file://$PROJECT_DIR$/build.gradle" />
@@ -1048,11 +802,19 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="GAPID_DISABLE_PCS" value="false" />
+      </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
-      <method />
+      <method>
+        <option name="Make" enabled="true" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
@@ -1068,9 +830,17 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <method />
+      <Java />
+      <Profilers>
+        <option name="GAPID_DISABLE_PCS" value="false" />
+      </Profilers>
+      <method>
+        <option name="Make" enabled="true" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
@@ -1152,6 +922,9 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
       <method />
     </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
@@ -1347,9 +1120,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -1449,19 +1219,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory />
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory />
-      <recursive>false</recursive>
-      <method />
-    </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
       <method />
     </configuration>
@@ -1551,32 +1308,44 @@
       <workItem from="1467748579277" duration="6626000" />
       <workItem from="1467892367784" duration="22375000" />
       <workItem from="1467955807365" duration="6430000" />
-      <workItem from="1467983889641" duration="6835000" />
+      <workItem from="1467983889641" duration="21345000" />
+      <workItem from="1468081086213" duration="6597000" />
+      <workItem from="1468105156472" duration="7119000" />
+      <workItem from="1468150615317" duration="2000" />
+      <workItem from="1468168125825" duration="19000" />
+      <workItem from="1468169926246" duration="5724000" />
+      <workItem from="1468201817816" duration="3937000" />
+      <workItem from="1468275813329" duration="652000" />
+      <workItem from="1468311571389" duration="20020000" />
+      <workItem from="1468422080403" duration="5433000" />
+      <workItem from="1468515790475" duration="914000" />
+      <workItem from="1468529021055" duration="2490000" />
+      <workItem from="1468535802175" duration="3836000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="388775000" />
+    <option name="totallyTimeSpent" value="460028000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-45" y="164" width="1918" height="1028" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46936542" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4687157" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.54814005" sideWeight="0.5208333" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35448578" sideWeight="0.5209864" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.54814005" sideWeight="0.47916666" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57509625" sideWeight="0.47901365" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2015625" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18489583" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1586,7 +1355,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.49791667" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896116" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29749477" sideWeight="0.49580273" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2964989" sideWeight="0.49580273" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
@@ -1603,7 +1372,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="52" />
+      <option name="time" value="59" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1612,59 +1381,291 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../Old Projects/azurejava/src/main/java/org/azure/communication/messages/incoming/unsorted/GetCurrencyBalanceMessageEvent.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/RoomDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="391">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Mango Emulator/src/Mango/Rooms/RoomInstance.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="17">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Regular Emulators/Public/Roleplay/Plus Emulator/HabboHotel/Rewards/RewardManager.cs">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.476/habbo4java - #teamchromide/src/com/mmoscene/h4j/habbohotel/rooms/actors/RoomActor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+        <state relative-caret-position="795">
+          <caret line="172" column="5" selection-start-line="172" selection-start-column="5" selection-end-line="172" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/inventory/clothes/FigureSetIdsComposer.java">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.580/habbo4java - #teamchromide/src/com/mmoscene/h4j/habbohotel/rooms/RoomManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/sessions/SessionManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/inventory/pursue/CreditBalanceComposer.java" />
-    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Regular Emulators/Public/Roleplay/Plus Emulator/Communication/Packets/Outgoing/Inventory/Purse/CreditBalanceComposer.cs">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.159/habbo4java - #teamchromide/src/com/mmoscene/h4j/habbohotel/rooms/actors/RoomActor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="70" column="8" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/package-info.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.565/habbo4java - #teamchromide/src/com/mmoscene/h4j/communication/events/room/InitializeRoomMessageEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Mango Emulator/src/Mango/Rooms/RoomManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="126" column="17" selection-start-line="126" selection-start-column="17" selection-end-line="127" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/revolution.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/room/session/OpenFlatConnectionMessageComposer.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/room/session/OpenFlatConnectionEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/UniqueMachineIDComposer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/PerkAllowancesComposer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/Revolution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2261">
+          <caret line="170" column="26" selection-start-line="170" selection-start-column="26" selection-end-line="170" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2410#2411#0" expanded="false" />
+            <element signature="e#2439#2440#0" expanded="false" />
+            <element signature="e#2493#2494#0" expanded="false" />
+            <element signature="e#2532#2533#0" expanded="false" />
+            <element signature="e#4542#4543#0" expanded="false" />
+            <element signature="e#4569#4570#0" expanded="false" />
+            <element signature="e#4620#4621#0" expanded="false" />
+            <element signature="e#4658#4659#0" expanded="false" />
+            <element signature="e#4707#4708#0" expanded="false" />
+            <element signature="e#4744#4745#0" expanded="false" />
+            <element signature="e#4791#4792#0" expanded="false" />
+            <element signature="e#4827#4828#0" expanded="false" />
+            <element signature="e#4871#4872#0" expanded="false" />
+            <element signature="e#4902#4903#0" expanded="false" />
+            <element signature="e#7820#7821#0" expanded="false" />
+            <element signature="e#7873#7874#0" expanded="false" />
+            <element signature="e#7918#7919#0" expanded="false" />
+            <element signature="e#7977#7978#0" expanded="false" />
+            <element signature="e#8021#8022#0" expanded="false" />
+            <element signature="e#8101#8102#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Plus Emulator/HabboHotel/Rooms/RoomUser.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="143" column="0" selection-start-line="155" selection-start-column="23" selection-end-line="155" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Plus Emulator/HabboHotel/Rooms/Room.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="421" column="190" selection-start-line="421" selection-start-column="186" selection-end-line="421" selection-end-column="190" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Plus Emulator/Communication/Packets/Incoming/Rooms/Connection/OpenFlatConnectionEvent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Plus Emulator/HabboHotel/GameClients/GameClient.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="168" column="93" selection-start-line="168" selection-start-column="90" selection-end-line="168" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Plus Emulator/Communication/Packets/Outgoing/Rooms/Session/FlatAccessibleComposer.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Regular Emulators/Public/Roleplay/Plus Emulator/Communication/Packets/Outgoing/Inventory/Purse/ActivityPointsComposer.cs">
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Plus Emulator/Communication/Packets/Outgoing/Rooms/Session/OpenConnectionComposer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/navigator/UserFlatCatsComposer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/ClientPacketHeader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/avatar/RoomAvatarType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Plus Emulator/Communication/Packets/Outgoing/Navigator/RoomRatingComposer.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="36" selection-end-column="37" />
+          <caret line="6" column="55" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/notifications/ActivityPointsMessageComposer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/PlayerBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/navigator/RoomRatingComposer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Plus Emulator/Communication/Packets/Outgoing/ServerPacketHeader.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3383">
+          <caret line="199" column="55" selection-start-line="199" selection-start-column="55" selection-end-line="199" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/room/session/OpenConnectionComposer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Plus Emulator/Communication/Packets/Outgoing/Rooms/Session/RoomReadyComposer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/room/session/RoomReadyComposer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-          <folding />
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/inventory/purse/CreditBalanceComposer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/ServerPacketHeader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="67" selection-start-line="34" selection-start-column="67" selection-end-line="34" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Mango Emulator/src/Mango/Rooms/Avatar/RoomAvatar.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8568">
+          <caret line="504" column="24" selection-start-line="504" selection-start-column="24" selection-end-line="504" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Plus Emulator/HabboHotel/Users/Habbo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="86" column="32" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Plus Emulator/HabboHotel/Rooms/Chat/Commands/Moderator/Fun/SummonCommand.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="762">
+          <caret line="56" column="52" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/avatar/RoomAvatar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#801#802#0" expanded="false" />
+            <element signature="e#845#846#0" expanded="false" />
+            <element signature="e#888#889#0" expanded="false" />
+            <element signature="e#927#928#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/room/session/RoomForwardComposer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
@@ -1674,357 +1675,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Regular Emulators/Public/Roleplay/Plus Emulator/Communication/Packets/Incoming/Inventory/Purse/GetCreditsInfoEvent.cs">
+    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Plus Emulator/Communication/Packets/Incoming/Rooms/Engine/GetRoomEntryDataEvent.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        <state relative-caret-position="697">
+          <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/players/PlayerBean.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/network/sessions/Session.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="833">
+          <caret line="78" column="9" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
+          <folding>
+            <element signature="e#1948#1949#0" expanded="false" />
+            <element signature="e#1978#1979#0" expanded="false" />
+            <element signature="e#2006#2007#0" expanded="false" />
+            <element signature="e#2032#2033#0" expanded="false" />
+            <element signature="e#2073#2074#0" expanded="false" />
+            <element signature="e#2106#2107#0" expanded="false" />
+            <element signature="e#2145#2146#0" expanded="false" />
+            <element signature="e#2183#2184#0" expanded="false" />
+            <element signature="e#3741#3742#0" expanded="false" />
+            <element signature="e#3786#3787#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/inventory/purse/GetCreditsInfoEvent.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/roomdirectory/RoomNetworkOpenConnectionEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/InfoRetrieveMessageEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_92/src.zip!/java/lang/Enum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="128" column="7" selection-start-line="128" selection-start-column="7" selection-end-line="128" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/handshake/UserObjectComposer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/ClientPacketHeader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Regular Emulators/Public/Roleplay/Plus Emulator/Communication/Packets/Incoming/ClientPacketHeader.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="161" column="31" selection-start-line="161" selection-start-column="31" selection-end-line="161" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/InitDiffieHandshakeMessageEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/PingMessageEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/SSOTicketMessageEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/TryLoginMessageEvent.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomActor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/UniqueIDMessageEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/handshake/VersionCheckMessageEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/catalog/GetCatalogRoomPromotionEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/landingview/RefreshCampaignEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Regular Emulators/Public/Roleplay/Plus Emulator/HabboHotel/LandingView/LandingViewManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="49" column="47" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Regular Emulators/Public/Roleplay/Plus Emulator/HabboHotel/LandingView/Promotions/Promotion.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.001/MercuryPack/mercurydb.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="13405" column="20" selection-start-line="13405" selection-start-column="16" selection-end-line="13405" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.308/habbo4java - #teamchromide/src/com/mmoscene/h4j/database/HotelView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Regular Emulators/Public/Roleplay/Plus Emulator/Communication/Packets/Incoming/LandingView/GetPromoArticlesEvent.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/landingview/GetPromoArticlesEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/navigator/FlatCat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="15" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Regular Emulators/Public/Roleplay/Plus Emulator/Communication/Packets/Outgoing/LandingView/PromoArticlesComposer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="67" selection-start-line="19" selection-start-column="13" selection-end-line="26" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/landingview/PromoArticlesMessageComposer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/DatabaseModule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#701#702#0" expanded="false" />
-            <element signature="e#740#741#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/domain/landingview/Promotion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/NavigatorDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/GenericHibernateDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/GenericJpaDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/LandingViewDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="e#380#381#0" expanded="false" />
-            <element signature="e#432#433#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/database/dao/PlayerDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#731#761#0" expanded="true" />
-            <element signature="e#808#809#0" expanded="true" />
-            <element signature="e#845#846#0" expanded="true" />
-            <element signature="e#852#882#0" expanded="true" />
-            <element signature="e#919#920#0" expanded="true" />
-            <element signature="e#951#952#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/revolution.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/Revolution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="35" column="36" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2464#2465#0" expanded="true" />
-            <element signature="e#2503#2504#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/encryption/HabboEncryption.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#352#353#0" expanded="false" />
+            <element signature="e#379#380#0" expanded="false" />
+            <element signature="e#414#415#0" expanded="false" />
+            <element signature="e#445#446#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/incoming/game/lobby/GetGameListEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/game/rooms/RoomModelType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/preferences/AccountPreferencesComposer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/PacketEventTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="8" selection-end-column="0" />
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/Habbo Projects/Regular Emulators/Public/Roleplay/Plus Emulator/Communication/Packets/Outgoing/ServerPacketHeader.cs">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/PacketManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="65" column="58" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="58" />
+        <state relative-caret-position="408">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/ServerPacketHeader.java">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+        <state relative-caret-position="383">
+          <caret line="32" column="53" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/mdev/revolution/communication/packets/outgoing/room/session/RoomForwardMessageComposer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2047,7 +1808,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Hibernate</last-edited>
+          <last-edited>JPA (Revolution_main)|JPA</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -2094,11 +1855,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Gradle: antlr:antlr:2.7.7</last-edited>
+          <last-edited>Gradle: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.20129271" />
+                <option value="0.40258542" />
               </list>
             </option>
           </splitter-proportions>

@@ -4,7 +4,7 @@ package org.mdev.revolution.communication.packets.incoming.landingview;
 import org.mdev.revolution.communication.packets.PacketEvent;
 import org.mdev.revolution.communication.packets.incoming.ClientPacket;
 import org.mdev.revolution.communication.packets.incoming.ClientPacketHeader;
-import org.mdev.revolution.communication.packets.outgoing.landingview.CampaignMessageComposer;
+import org.mdev.revolution.communication.packets.outgoing.landingview.CampaignComposer;
 import org.mdev.revolution.network.sessions.Session;
 
 public class RefreshCampaignEvent {
@@ -28,6 +28,6 @@ public class RefreshCampaignEvent {
             name = data[1];
         }
 
-        session.sendPacket(new CampaignMessageComposer(campaigns, name));
+        session.sendPacket(new CampaignComposer(campaigns, name));
     }
 }

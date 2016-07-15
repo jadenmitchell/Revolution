@@ -73,13 +73,13 @@ public class PacketManager {
         threadPool.submit(new PacketEventTask(session, packet));
     }
 
-    public String getDeclaringClass(short header) {
+    String getDeclaringClass(short header) {
         if (!packets.containsKey(header))
             return "undefined";
         return packets.get(header).getDeclaringClass().getSimpleName();
     }
 
-    public Method getPacketHandler(short header) {
+    Method getPacketHandler(short header) {
         return packets.get(header);
     }
 

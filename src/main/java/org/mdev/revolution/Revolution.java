@@ -22,6 +22,7 @@ import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Properties;
 import java.util.concurrent.Executors;
 
 @Singleton
@@ -148,6 +149,18 @@ public class Revolution {
         }
 
         long start = System.currentTimeMillis();
+
+        Properties props = System.getProperties();
+        System.err.println("-=-=-=-=-=-=-=-");
+        System.err.println("Computer Information");
+        System.err.println("\tOperating System: " + props.getProperty("os.name"));
+        System.err.println("\tOperating System Architecture: " + props.getProperty("os.arch"));
+        System.err.println("\tProcessors Available: " + Runtime.getRuntime().availableProcessors());
+
+        System.err.println("\n-=-=-=-=-=-=-=-");
+        System.err.println("Virtual Machine Information");
+        System.err.println("\tVirtual Machine Vendor: " + props.getProperty("java.vendor"));
+        System.err.println("\tVirtual Machine Version: " + props.getProperty("java.version"));
 
         loadConfiguration(configFile);
         loadEverythingElse();

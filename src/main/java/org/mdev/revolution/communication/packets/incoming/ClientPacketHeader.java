@@ -15,4 +15,6 @@ public final class ClientPacketHeader {
     public static final short NewNavigatorSearchEvent = 2722;
     public static final short LatencyPingRequestMessageEvent = 538;
     public static final short GetCreditsInfoEvent = 3697;
+    public static final short RoomNetworkOpenConnectionMessageEvent = 0; // 404
+    public static final short OpenFlatConnectionMessageEvent = 407;
 }

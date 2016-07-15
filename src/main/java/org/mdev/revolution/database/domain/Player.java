@@ -15,11 +15,11 @@ public class Player implements Serializable {
     @Column(name = "mail", unique = true, nullable = false)
     private String email;
 
-    @Column(name = "username", unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
     private String username;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "gender", nullable = false)
+    @Column(nullable = false)
     private PlayerGender gender;
 
     public Player() {

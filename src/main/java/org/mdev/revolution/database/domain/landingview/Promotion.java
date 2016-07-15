@@ -10,10 +10,10 @@ public class Promotion implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "title", length = 35)
+    @Column(length = 35)
     private String title;
 
-    @Column(name = "text")
+    @Column
     private String text;
 
     @Column(name = "button_text", length = 25)

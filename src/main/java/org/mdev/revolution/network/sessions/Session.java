@@ -1,7 +1,6 @@
 package org.mdev.revolution.network.sessions;
 
 import io.netty.channel.Channel;
-import io.netty.channel.ChannelFutureListener;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.mdev.revolution.Revolution;
@@ -9,19 +8,18 @@ import org.mdev.revolution.communication.encryption.ARC4;
 import org.mdev.revolution.communication.packets.outgoing.ServerPacket;
 import org.mdev.revolution.communication.packets.outgoing.inventory.achievements.AchievementsComposer;
 import org.mdev.revolution.communication.packets.outgoing.inventory.achievements.AchievementsScoreComposer;
-import org.mdev.revolution.communication.packets.outgoing.availability.AvailabilityStatusMessageComposer;
-import org.mdev.revolution.communication.packets.outgoing.catalog.BuildersClubSubscriptionStatusMessageComposer;
+import org.mdev.revolution.communication.packets.outgoing.availability.AvailabilityStatusComposer;
+import org.mdev.revolution.communication.packets.outgoing.catalog.BuildersClubSubscriptionStatusComposer;
 import org.mdev.revolution.communication.packets.outgoing.handshake.AuthenticationOKComposer;
-import org.mdev.revolution.communication.packets.outgoing.handshake.UserRightsMessageComposer;
-import org.mdev.revolution.communication.packets.outgoing.inventory.avatareffect.AvatarEffectsMessageComposer;
+import org.mdev.revolution.communication.packets.outgoing.handshake.UserRightsComposer;
+import org.mdev.revolution.communication.packets.outgoing.inventory.avatareffect.AvatarEffectsComposer;
 import org.mdev.revolution.communication.packets.outgoing.moderation.CfhChatlogComposer;
 import org.mdev.revolution.communication.packets.outgoing.navigator.NavigatorSettingsComposer;
-import org.mdev.revolution.communication.packets.outgoing.notifications.HabboBroadcastMessageComposer;
+import org.mdev.revolution.communication.packets.outgoing.notifications.HabboBroadcastComposer;
 import org.mdev.revolution.communication.packets.outgoing.notifications.MOTDNotificationComposer;
 import org.mdev.revolution.communication.packets.outgoing.preferences.AccountPreferencesComposer;
 import org.mdev.revolution.database.domain.Player;
 import org.mdev.revolution.game.players.PlayerBean;
-import org.mdev.revolution.game.players.PlayerService;
 import org.mdev.revolution.network.codec.EncryptionDecoder;
 import org.mdev.revolution.utilities.DefaultConfig;
 
@@ -50,31 +48,28 @@ public class Session {
 
     public boolean tryLogin(String ssoTicket) {
         try {
-            logger.info("logging in...");
-            Player player = PlayerService.getInstance().findPlayer(ssoTicket);
+            Player player = Revolution.getInstance().getGame().getPlayerDao().findPlayer(ssoTicket);
             if (player == null) {
-                sendPacket(new HabboBroadcastMessageComposer("No player found with your session ticket"));
+                sendPacket(new HabboBroadcastComposer("No player found with your session ticket"));
                 return false;
             }
 
-            PlayerService.removeSSOTicket(player.getId());
-            PlayerService.getInstance().save(player);
-
-            playerBean = new PlayerBean(player);
+            //PlayerDao.removeSSOTicket(player.getId());
 
             sendQueued(new AuthenticationOKComposer())
-                    .sendQueued(new AvatarEffectsMessageComposer(null))
+                    .sendQueued(new AvatarEffectsComposer(null))
                     .sendQueued(new NavigatorSettingsComposer(0)) // HOMEROOM
-                    .sendQueued(new UserRightsMessageComposer(0, true, true, false)) // CLUB, VIP, AMBASSADOR SETTINGS
-                    .sendQueued(new AvailabilityStatusMessageComposer())
+                    .sendQueued(new UserRightsComposer(0, true, true, false)) // CLUB, VIP, AMBASSADOR SETTINGS
+                    .sendQueued(new AvailabilityStatusComposer())
                     .sendQueued(new AchievementsScoreComposer(0))
-                    .sendQueued(new BuildersClubSubscriptionStatusMessageComposer())
+                    .sendQueued(new BuildersClubSubscriptionStatusComposer())
                     .sendQueued(new CfhChatlogComposer())
                     .sendQueued(new AchievementsComposer())
                     .sendQueued(new AccountPreferencesComposer())
                     .getChannel().flush();
 
             sendPacket(new MOTDNotificationComposer(Revolution.getConfig().getOrDefault("motd", DefaultConfig.motd)));
+            playerBean.getAvatar().prepareRoom(1);
             return true;
         }
         catch (Exception e) {
