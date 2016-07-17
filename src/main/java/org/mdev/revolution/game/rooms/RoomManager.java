@@ -11,12 +11,12 @@ import java.util.concurrent.ConcurrentHashMap;
 public class RoomManager {
     private static final Logger logger = LogManager.getLogger(Session.class);
 
-    private ConcurrentHashMap<Integer, RoomBean> rooms;
-    //private Object roomLoadingSync;
+    private final ConcurrentHashMap<Integer, RoomBean> rooms;
+    private final Object roomLoadingSync;
 
     public RoomManager() {
-        //rooms = TCollections.synchronizedMap(new TIntObjectHashMap<RoomBean>());
         rooms = new ConcurrentHashMap<>(20, 0.9f, 4);
+        roomLoadingSync = new Object();
     }
 
     public RoomBean loadRoom(int roomId) {
@@ -30,24 +30,21 @@ public class RoomManager {
             return roomBean;
         }
 
-        // REMOVED OBJECT SYNCHRONIZATION FOR METHODS USING PUT/REMOVE
-        // WILL PROBABLY RE-ADD THIS LATER IN DEVELOPMENT
-        // SYNCHRONIZE THE LOADING OBJECT FOR CODE
-        // synchronized (roomLoadingSync) {}
-        Room room = Revolution.getInstance().getGame().getRoomDao().findRoom(roomId);
-        if (room == null) {
-            return null;
-        }
+        synchronized (roomLoadingSync) {
+            Room room = Revolution.getInstance().getGame().getRoomDao().findRoom(roomId);
+            if (room == null) {
+                return null;
+            }
 
-        roomBean = new RoomBean(room);
-        roomBean = rooms.put(roomId, roomBean);
-        if (roomBean == null) {
-            logger.info("<Room " + roomId + " expected " + room.getId() + "> was loaded successfully.");
-            return rooms.get(roomId);
-        }
-        else {
-            logger.info("<Room " + roomId + " expected " + room.getId() + "> failed to load (a room with the same key already exists)");
-            return null;
+            roomBean = new RoomBean(room);
+            roomBean = rooms.put(roomId, roomBean);
+            if (roomBean == null) {
+                logger.info("<Room " + roomId + " expected " + room.getId() + "> was loaded successfully.");
+                return rooms.get(roomId);
+            } else {
+                logger.info("<Room " + roomId + " expected " + room.getId() + "> failed to load (a room with the same key already exists)");
+                return null;
+            }
         }
     }
 }

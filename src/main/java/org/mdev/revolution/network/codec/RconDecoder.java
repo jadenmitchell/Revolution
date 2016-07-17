@@ -21,7 +21,6 @@ public class RconDecoder extends MessageToMessageDecoder<ByteBuf> {
 
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf buffer, List<Object> out) throws Exception {
-        // TODO: Decode and handle RCON buffers.
         logger.info("Incoming RCON server data: {0}", buffer);
     }
 }

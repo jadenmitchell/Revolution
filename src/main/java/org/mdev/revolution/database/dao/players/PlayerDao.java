@@ -1,10 +1,11 @@
-package org.mdev.revolution.database.dao;
+package org.mdev.revolution.database.dao.players;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.mdev.revolution.Revolution;
 import org.mdev.revolution.communication.packets.incoming.handshake.SSOTicketEvent;
 import org.mdev.revolution.database.DatabaseManager;
+import org.mdev.revolution.database.dao.GenericJpaDao;
 import org.mdev.revolution.database.domain.Player;
 
 import javax.annotation.PostConstruct;
@@ -17,7 +18,8 @@ import java.sql.SQLException;
 public class PlayerDao  {
     private static final Logger logger = LogManager.getLogger(DatabaseManager.class);
 
-    @Inject GenericJpaDao<Player, Integer> players;
+    @Inject
+    GenericJpaDao<Player, Integer> players;
 
     @Inject
     @PostConstruct

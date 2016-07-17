@@ -6,7 +6,7 @@ import org.mdev.revolution.communication.packets.incoming.ClientPacketHeader;
 import org.mdev.revolution.network.sessions.Session;
 
 public class OpenFlatConnectionEvent {
-    @PacketEvent(number = ClientPacketHeader.RoomNetworkOpenConnectionMessageEvent)
+    @PacketEvent(number = ClientPacketHeader.OpenFlatConnectionMessageEvent)
     public static void goToRoom(Session session, ClientPacket packet) {
         int roomId = packet.readInt();
         String password = packet.readString();

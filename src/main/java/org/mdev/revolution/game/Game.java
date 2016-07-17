@@ -4,10 +4,10 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.netflix.governator.guice.lazy.LazySingleton;
 import org.mdev.revolution.database.DatabaseModule;
-import org.mdev.revolution.database.dao.LandingViewDao;
-import org.mdev.revolution.database.dao.NavigatorDao;
-import org.mdev.revolution.database.dao.PlayerDao;
-import org.mdev.revolution.database.dao.RoomDao;
+import org.mdev.revolution.database.dao.landingview.LandingViewDao;
+import org.mdev.revolution.database.dao.navigator.NavigatorDao;
+import org.mdev.revolution.database.dao.players.PlayerDao;
+import org.mdev.revolution.database.dao.rooms.RoomDao;
 import org.mdev.revolution.game.rooms.RoomManager;
 
 import javax.inject.Inject;

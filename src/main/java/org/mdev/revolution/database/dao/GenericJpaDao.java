@@ -88,7 +88,7 @@ public class GenericJpaDao<T, K extends Serializable> {
 
     @Transactional
     @SuppressWarnings("unchecked")
-    private TypedQuery<T> findTypedQueryByProperty(final SingularAttribute<T, ? extends Object> property, final Object value) {
+    private TypedQuery<T> findTypedQueryByProperty(final SingularAttribute<T, ?> property, final Object value) {
         final CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         final CriteriaQuery<T> criteriaQuery = criteriaBuilder
                 .createQuery(clazz);

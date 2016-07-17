@@ -9,7 +9,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
-import org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorBuilderImpl;
 import org.hibernate.service.ServiceRegistry;
 import org.mdev.revolution.Revolution;
 
@@ -43,8 +42,6 @@ public class DatabaseManager {
         Configuration configuration = new Configuration().configure();
         ServiceRegistry serviceRegistry
                 = new StandardServiceRegistryBuilder()
-                //.applySetting(Environment.CONNECTION_PROVIDER, "com.zaxxer.hikari.hibernate.HikariConnectionProvider")
-                //.applySetting(Environment.TRANSACTION_COORDINATOR_STRATEGY, JtaTransactionCoordinatorBuilderImpl.class)
                 .applySetting(Environment.DATASOURCE, dataSource)
                 .applySetting(Environment.SESSION_FACTORY_NAME, dataSource.getDataSourceJNDI())
                 .applySetting(Environment.SESSION_FACTORY_NAME_IS_JNDI, "true")

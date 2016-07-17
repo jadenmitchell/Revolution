@@ -1,19 +1,24 @@
 package org.mdev.revolution.game.navigator;
 
 import com.google.common.collect.Lists;
+import com.hazelcast.core.Hazelcast;
+import com.hazelcast.core.HazelcastInstance;
 import org.mdev.revolution.Revolution;
 import org.mdev.revolution.database.domain.navigator.FlatCat;
-import org.mdev.revolution.game.redis.RedisStorage;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
+import java.util.Map;
 
-public class NavigatorSearchService {
-    // TODO: Cache navigator search data using Redis
-    private static RedisStorage storage;
+public final class NavigatorSearchService {
+    private static final HazelcastInstance hzInstance = Hazelcast.newHazelcastInstance();
+    private static final Map<String, List<FlatCat>> hCache = hzInstance.getMap("default");
 
     public static WeakReference<List<FlatCat>> search(String category, String data) {
         List<FlatCat> categories = Lists.newArrayList();
+        if (hCache.containsKey(data)) {
+            return new WeakReference<>(hCache.get(data));
+        }
         if (data.isEmpty()) {
             Revolution.getInstance().getGame().getNavigatorDao().getFlatCategories().forEach((c) -> {
                 if (c.getCategory() == NavigatorCategory.valueOf(category)) {
@@ -23,6 +28,7 @@ public class NavigatorSearchService {
                 }
             });
         }
+        hCache.put(data, categories);
         return new WeakReference<>(categories);
     }
 }

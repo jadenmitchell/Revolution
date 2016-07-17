@@ -39,39 +39,35 @@ public class RSAKey {
         int qs = b >> 1;
 
         while (true) {
-            while (true) {
-                p = BigInteger.probablePrime(b - qs, new Random());
+            p = BigInteger.probablePrime(b - qs, new Random());
 
-                if (p.subtract(BigInteger.ONE).gcd(e).equals(BigInteger.ONE) && p.isProbablePrime(10)) {
-                    break;
-                }
+            if (p.subtract(BigInteger.ONE).gcd(e).equals(BigInteger.ONE) && p.isProbablePrime(10)) {
+                break;
             }
+        }
 
-            while (true) {
-                q = BigInteger.probablePrime(qs, new Random());
+        while (true) {
+            q = BigInteger.probablePrime(qs, new Random());
 
-                if (q.subtract(BigInteger.ONE).gcd(e).equals(BigInteger.ONE) && q.isProbablePrime(10)) {
-                    break;
-                }
+            if (q.subtract(BigInteger.ONE).gcd(e).equals(BigInteger.ONE) && q.isProbablePrime(10)) {
+                break;
             }
+        }
 
-            if (q.compareTo(p) == 1) {
-                BigInteger t = p;
-                p = q;
-                q = t;
-            }
+        if (q.compareTo(p) == 1) {
+            BigInteger t = p;
+            p = q;
+            q = t;
+        }
 
-            BigInteger phi = p.subtract(BigInteger.ONE).multiply((q.subtract(BigInteger.ONE)));
+        BigInteger phi = p.subtract(BigInteger.ONE).multiply((q.subtract(BigInteger.ONE)));
 
-            if (phi.gcd(e).equals(BigInteger.ONE)) {
-                n = p.multiply(q);
-                d = e.modInverse(phi);
-                dmp1 = d.remainder(p.subtract(BigInteger.ONE));
-                dmq1 = d.remainder(p.subtract(BigInteger.ONE));
-                coeff = q.modInverse(p);
-            }
-
-            break;
+        if (phi.gcd(e).equals(BigInteger.ONE)) {
+            n = p.multiply(q);
+            d = e.modInverse(phi);
+            dmp1 = d.remainder(p.subtract(BigInteger.ONE));
+            dmq1 = d.remainder(p.subtract(BigInteger.ONE));
+            coeff = q.modInverse(p);
         }
 
         canEncrypt = (n.compareTo(BigInteger.ZERO) == 1 && e.compareTo(BigInteger.ZERO) == 1);

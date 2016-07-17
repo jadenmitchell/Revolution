@@ -7,7 +7,7 @@ public class ARC4 {
     private static final int POOL_SIZE = 256;
     private int i = 0;
     private int j = 0;
-    private int[] table;
+    private final int[] table;
 
     public ARC4() {
         table = new int[POOL_SIZE];
