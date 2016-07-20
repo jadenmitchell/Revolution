@@ -1,17 +1,23 @@
 package org.mdev.revolution.communication.encryption;
 
-import javax.xml.bind.DatatypeConverter;
+import org.mdev.revolution.Revolution;
+import org.mdev.revolution.utilities.SecurityUtil;
+
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 
-public class HabboEncryption {
-    private static RSAKey rsaKey;
+public final class HabboEncryption {
+    private static final BigInteger PRIME = new BigInteger("114670925920269957593299136150366957983142588366300079186349531");
+    private static final BigInteger GENERATOR = new BigInteger("1589935137502239924254699078669119674538324391752663931735947");
+
+    private static RSA rsa;
     private static DiffieHellman diffieHellman;
 
-    public static void initialize(String n, String e, String d) {
-        rsaKey = new RSAKey(new BigInteger(n, 16), new BigInteger(e), new BigInteger(d, 16),
+    public static void initialize() {
+        rsa = new RSA(new BigInteger(Revolution.N, 16), new BigInteger(Revolution.E), new BigInteger(Revolution.D, 16),
                 BigInteger.ZERO, BigInteger.ZERO, BigInteger.ZERO, BigInteger.ZERO, BigInteger.ZERO);
-        diffieHellman = new DiffieHellman();
+        // Currently using predefined DH keys
+        diffieHellman = new DiffieHellman(PRIME, GENERATOR);
     }
 
     public static String toHexString(byte[] bytes) {
@@ -24,7 +30,7 @@ public class HabboEncryption {
 
     private static String getRsaStringEncrypted(String msg) {
         byte[] m = msg.getBytes();
-        byte[] c = rsaKey.sign(m);
+        byte[] c = rsa.sign(m);
         return toHexString(c);
     }
 
@@ -45,7 +51,7 @@ public class HabboEncryption {
 
     public static BigInteger calculateDiffieHellmanSharedKey(String publicKey) {
         byte[] cbytes = toByteArray(publicKey);
-        byte[] publicKeyBytes = rsaKey.verify(cbytes);
+        byte[] publicKeyBytes = rsa.verify(cbytes);
         String publicKeyString = new String(publicKeyBytes, StandardCharsets.UTF_8);
         return diffieHellman.calculateSharedKey(new BigInteger(publicKeyString, 10));
     }

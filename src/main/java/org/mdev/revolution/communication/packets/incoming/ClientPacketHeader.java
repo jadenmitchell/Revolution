@@ -17,4 +17,7 @@ public final class ClientPacketHeader {
     public static final short GetCreditsInfoEvent = 3697;
     public static final short RoomNetworkOpenConnectionMessageEvent = 0; // 404
     public static final short OpenFlatConnectionMessageEvent = 407;
+    public static final short GetGameListMessageEvent = 2993;
+    public static final short GetEventCategoriesMessageEvent = 1086;
+
 }

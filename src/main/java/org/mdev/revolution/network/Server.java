@@ -59,7 +59,7 @@ public class Server {
     @Deprecated
     protected Server() {
         InternalLoggerFactory.setDefaultFactory(Log4J2LoggerFactory.INSTANCE);
-
+        channels = new DefaultChannelGroup("tcp-server", GlobalEventExecutor.INSTANCE);
         host = Revolution.getConfig().getString("network.host");
         ports = new ArrayList<>();
         String port = Revolution.getConfig().getString("network.port");
@@ -70,8 +70,6 @@ public class Server {
         } else {
             ports.add(Integer.parseInt(port));
         }
-
-        channels = new DefaultChannelGroup("tcp-server", GlobalEventExecutor.INSTANCE);
     }
 
     public void start() {

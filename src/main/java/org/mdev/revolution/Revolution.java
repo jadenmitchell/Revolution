@@ -8,7 +8,6 @@ import com.netflix.governator.configuration.ArchaiusConfigurationProvider;
 import com.netflix.governator.guice.LifecycleInjector;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.mdev.revolution.communication.encryption.HabboEncryption;
 import org.mdev.revolution.communication.packets.PacketManager;
 import org.mdev.revolution.database.DatabaseManager;
 import org.mdev.revolution.game.Game;
@@ -92,7 +91,6 @@ public class Revolution {
 
         getInstance().packetManager = new PacketManager();
         getInstance().packetManager.initialize();
-        HabboEncryption.initialize(N, E, D);
 
         getInstance().sessionManager = new SessionManager();
         getInstance().game = new Game();

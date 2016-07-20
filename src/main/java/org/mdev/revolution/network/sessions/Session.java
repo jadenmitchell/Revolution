@@ -4,7 +4,7 @@ import io.netty.channel.Channel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.mdev.revolution.Revolution;
-import org.mdev.revolution.communication.encryption.ARC4;
+import org.mdev.revolution.communication.encryption.RC4;
 import org.mdev.revolution.communication.packets.outgoing.ServerPacket;
 import org.mdev.revolution.communication.packets.outgoing.inventory.achievements.AchievementsComposer;
 import org.mdev.revolution.communication.packets.outgoing.inventory.achievements.AchievementsScoreComposer;
@@ -27,14 +27,14 @@ public class Session {
     private static final Logger logger = LogManager.getLogger(Session.class);
 
     private Channel channel;
-    private ARC4 rc4;
+    private RC4 rc4;
     private PlayerBean playerBean;
 
     public Channel getChannel() {
         return channel;
     }
 
-    public ARC4 getRC4() {
+    public RC4 getRC4() {
         return rc4;
     }
 
@@ -54,6 +54,7 @@ public class Session {
                 return false;
             }
 
+            playerBean = new PlayerBean(this, player);
             //PlayerDao.removeSSOTicket(player.getId());
 
             sendQueued(new AuthenticationOKComposer())
@@ -89,7 +90,7 @@ public class Session {
     }
 
     public void enableRC4(byte[] sharedKey) {
-        rc4 = new ARC4();
+        rc4 = new RC4();
         rc4.init(sharedKey);
         channel.pipeline().addBefore("packetDecoder", "packetCrypto", new EncryptionDecoder());
     }

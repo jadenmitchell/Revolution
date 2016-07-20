@@ -1,4 +1,4 @@
-package org.mdev.revolution.communication.encryption;
+package org.mdev.revolution.utilities;
 
 public class SecurityUtil {
     final private static char[] hexArray = "0123456789ABCDEF".toCharArray();

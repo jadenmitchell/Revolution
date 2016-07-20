@@ -3,6 +3,7 @@ package org.mdev.revolution.communication.packets;
 import gnu.trove.map.hash.THashMap;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.mdev.revolution.communication.encryption.HabboEncryption;
 import org.mdev.revolution.communication.packets.incoming.ClientPacket;
 import org.mdev.revolution.network.sessions.Session;
 import org.mdev.revolution.threading.ThreadPool;
@@ -31,6 +32,8 @@ public class PacketManager {
         if (!packets.isEmpty()) {
             throw new IllegalStateException("Cannot re-initialize the PacketManager class.");
         }
+
+        HabboEncryption.initialize();
 
         Reflections reflections = new Reflections(new ConfigurationBuilder()
                 .setUrls(ClasspathHelper.forPackage("org.mdev.revolution.communication.packets.incoming"))

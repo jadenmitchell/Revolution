@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: javax.enterprise:cdi-api:1.1-PFD">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.enterprise/cdi-api/1.1-PFD/9ec46d69b097daec421e757ce49c07c76a025e18/cdi-api-1.1-PFD.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.enterprise/cdi-api/1.1-PFD/deb7b9926ed42a9ab6139021065a24bf96fb6f2b/cdi-api-1.1-PFD-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

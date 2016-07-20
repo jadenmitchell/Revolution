@@ -2,13 +2,13 @@ package org.mdev.revolution.communication.encryption;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.mdev.revolution.communication.encryption.delegation.Calculator;
+import org.mdev.revolution.communication.encryption.delegates.RSAMethod;
 
 import java.math.BigInteger;
 import java.util.Random;
 
-public class RSAKey {
-    private static final Logger logger = LogManager.getLogger(RSAKey.class);
+public class RSA {
+    private static final Logger logger = LogManager.getLogger(RSA.class);
 
     private BigInteger n;
     private BigInteger e;
@@ -22,7 +22,7 @@ public class RSAKey {
     protected boolean canDecrypt;
     protected boolean canEncrypt;
 
-    public RSAKey(BigInteger n, BigInteger e, BigInteger d, BigInteger p, BigInteger q,
+    public RSA(BigInteger n, BigInteger e, BigInteger d, BigInteger p, BigInteger q,
                   BigInteger dmp1, BigInteger dmq1, BigInteger coeff) {
         this.n = n;
         this.e = e;
@@ -34,6 +34,7 @@ public class RSAKey {
         this.coeff = coeff;
     }
 
+    @SuppressWarnings("unused")
     public void generatePair(int b, BigInteger e) {
         this.e = e;
         int qs = b >> 1;
@@ -97,7 +98,7 @@ public class RSAKey {
         return doDecrypt(this::doPrivate, src);
     }
 
-    private byte[] doEncrypt(Calculator cd, byte[] src) {
+    private byte[] doEncrypt(RSAMethod cd, byte[] src) {
         int bl = getBlockSize();
         byte[] pBytes = pkcs1pad(src, bl);
         BigInteger m = new BigInteger(pBytes);
@@ -106,7 +107,7 @@ public class RSAKey {
             return null;
         }
 
-        BigInteger c = cd.solve(m);
+        BigInteger c = cd.invoke(m);
 
         if (c.equals(BigInteger.ZERO)) {
             return null;
@@ -115,9 +116,9 @@ public class RSAKey {
         return c.toByteArray();
     }
 
-    private byte[] doDecrypt(Calculator cd, byte[] src) {
+    private byte[] doDecrypt(RSAMethod cd, byte[] src) {
         BigInteger c = new BigInteger(src);
-        BigInteger m = cd.solve(c);
+        BigInteger m = cd.invoke(c);
 
         if (m.equals(BigInteger.ZERO)) {
             return null;

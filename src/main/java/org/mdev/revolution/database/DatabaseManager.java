@@ -45,7 +45,6 @@ public class DatabaseManager {
                 .applySetting(Environment.DATASOURCE, dataSource)
                 .applySetting(Environment.SESSION_FACTORY_NAME, dataSource.getDataSourceJNDI())
                 .applySetting(Environment.SESSION_FACTORY_NAME_IS_JNDI, "true")
-                .applySetting(Environment.DIALECT, "org.hibernate.dialect." + (Revolution.getConfig().getString("mysql.dialect").equals("innodb") ? "MySQLInnoDBDialect" : "MySQLDialect"))
                 .build();
         sessionFactory = configuration.buildSessionFactory(serviceRegistry);
     }

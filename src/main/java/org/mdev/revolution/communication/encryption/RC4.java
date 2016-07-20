@@ -3,13 +3,14 @@ package org.mdev.revolution.communication.encryption;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 
-public class ARC4 {
+public class RC4 {
     private static final int POOL_SIZE = 256;
+
     private int i = 0;
     private int j = 0;
     private final int[] table;
 
-    public ARC4() {
+    public RC4() {
         table = new int[POOL_SIZE];
     }
 

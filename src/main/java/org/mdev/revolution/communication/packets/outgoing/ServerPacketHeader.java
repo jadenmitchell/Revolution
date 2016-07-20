@@ -33,4 +33,5 @@ public final class ServerPacketHeader {
     public static final short RoomForwardMessageComposer = 1963;
     public static final short RoomRatingComposer = 250;
     public static final short OpenConnectionMessageComposer = 2273;
+    public static final short GameListMessageComposer = 2481;
 }

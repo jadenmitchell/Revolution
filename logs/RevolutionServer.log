@@ -1,0 +1,206 @@
+2016-07-19 20:49:57.401 [main] INFO  org.mdev.revolution.Revolution - Configuration successfully loaded 7 properties.
+2016-07-19 20:50:03.194 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.1.Final}
+2016-07-19 20:50:03.196 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2016-07-19 20:50:03.197 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2016-07-19 20:50:05.233 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-07-19 20:50:05.600 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-07-19 20:50:09.021 [main] INFO  org.hibernate.internal.SessionFactoryRegistry - HHH000094: Bound factory to JNDI name: default
+2016-07-19 20:50:10.228 [main] INFO  org.mdev.revolution.communication.packets.PacketManager - Registered LatencyPingRequestEvent::pingRequest to id 538
+2016-07-19 20:50:10.228 [main] INFO  org.mdev.revolution.communication.packets.PacketManager - Registered InitDiffieHandshakeEvent::initCrypto to id 316
+2016-07-19 20:50:10.228 [main] INFO  org.mdev.revolution.communication.packets.PacketManager - Registered SSOTicketEvent::tryLogin to id 1778
+2016-07-19 20:50:10.228 [main] INFO  org.mdev.revolution.communication.packets.PacketManager - Registered NewNavigatorInitEvent::navigatorInit to id 882
+2016-07-19 20:50:10.228 [main] INFO  org.mdev.revolution.communication.packets.PacketManager - Registered RoomNetworkOpenConnectionEvent::openConnection to id 0
+2016-07-19 20:50:10.229 [main] INFO  org.mdev.revolution.communication.packets.PacketManager - Registered VersionCheckEvent::versionCheck to id 4000
+2016-07-19 20:50:10.229 [main] INFO  org.mdev.revolution.communication.packets.PacketManager - Registered GetUserFlatCatsEvent::getUserFlats to id 3672
+2016-07-19 20:50:10.229 [main] INFO  org.mdev.revolution.communication.packets.PacketManager - Registered GetPromoArticlesEvent::getArticles to id 3895
+2016-07-19 20:50:10.229 [main] INFO  org.mdev.revolution.communication.packets.PacketManager - Registered OpenFlatConnectionEvent::goToRoom to id 407
+2016-07-19 20:50:10.229 [main] INFO  org.mdev.revolution.communication.packets.PacketManager - Registered InfoRetrieveEvent::infoRetrieve to id 186
+2016-07-19 20:50:10.230 [main] INFO  org.mdev.revolution.communication.packets.PacketManager - Registered GetGameListEvent::getGameList to id 2993
+2016-07-19 20:50:10.230 [main] INFO  org.mdev.revolution.communication.packets.PacketManager - Registered RefreshCampaignEvent::refreshCampaigns to id 3544
+2016-07-19 20:50:10.230 [main] INFO  org.mdev.revolution.communication.packets.PacketManager - Registered GetCreditsInfoEvent::getCredits to id 3697
+2016-07-19 20:50:10.230 [main] INFO  org.mdev.revolution.communication.packets.PacketManager - Registered NewNavigatorSearchEvent::navigatorSearch to id 2722
+2016-07-19 20:50:10.230 [main] INFO  org.mdev.revolution.communication.packets.PacketManager - Registered CompleteDiffieHandshakeEvent::completeHandshake to id 3847
+2016-07-19 20:50:10.231 [main] INFO  org.mdev.revolution.communication.packets.PacketManager - Registered UniqueIDEvent::uniqueID to id 1471
+2016-07-19 20:50:10.494 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: org.mdev.revolution.jpa
+	...]
+2016-07-19 20:50:10.687 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLInnoDBDialect
+2016-07-19 20:50:16.961 [main] INFO  org.hibernate.cache.spi.UpdateTimestampsCache - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+2016-07-19 20:50:17.028 [main] INFO  org.hibernate.cache.internal.StandardQueryCache - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+2016-07-19 20:50:20.248 [main] ERROR org.mdev.revolution.network.Server - You must be running on a Linux machine in order to use epoll!
+2016-07-19 20:50:20.545 [main] INFO  org.mdev.revolution.network.Server - Successfully established a socket connection on 127.0.0.1:3001
+2016-07-19 20:50:20.545 [main] INFO  org.mdev.revolution.Revolution - Revolution Server started up in 23182ms
+2016-07-19 20:55:54.864 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 4000
+2016-07-19 20:55:55.167 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.threading.ThreadPool - Time taken to execute packet: -277ms
+2016-07-19 20:55:55.169 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 316
+2016-07-19 20:55:55.335 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.threading.ThreadPool - Time taken to execute packet: -166ms
+2016-07-19 20:55:55.575 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 3847
+2016-07-19 20:55:55.683 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.threading.ThreadPool - Time taken to execute packet: -107ms
+2016-07-19 20:55:56.231 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1600
+2016-07-19 20:55:56.306 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1471
+2016-07-19 20:55:56.400 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.threading.ThreadPool - Time taken to execute packet: -93ms
+2016-07-19 20:55:56.482 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1778
+2016-07-19 20:55:56.771 [pool-4-thread-2] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2016-07-19 20:55:57.255 [pool-4-thread-2] INFO  org.hibernate.engine.internal.StatisticalLoggingSessionEventListener - Session Metrics {
+    283830 nanoseconds spent acquiring 2 JDBC connections;
+    221853 nanoseconds spent releasing 2 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2016-07-19 20:55:57.307 [pool-4-thread-2] INFO  org.hibernate.engine.internal.StatisticalLoggingSessionEventListener - Session Metrics {
+    35529 nanoseconds spent acquiring 2 JDBC connections;
+    164613 nanoseconds spent releasing 2 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2016-07-19 20:55:57.308 [pool-4-thread-2] INFO  org.mdev.revolution.network.sessions.Session - <Room 1 expected 1> was loaded successfully.
+2016-07-19 20:55:57.499 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.threading.ThreadPool - Time taken to execute packet: -1017ms
+2016-07-19 20:56:03.232 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 538
+2016-07-19 20:56:03.304 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.threading.ThreadPool - Time taken to execute packet: -72ms
+2016-07-19 20:56:03.347 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 538
+2016-07-19 20:56:03.404 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.threading.ThreadPool - Time taken to execute packet: -57ms
+2016-07-19 20:56:03.465 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 3895
+2016-07-19 20:56:03.482 [pool-4-thread-2] INFO  org.hibernate.engine.internal.StatisticalLoggingSessionEventListener - Session Metrics {
+    365544 nanoseconds spent acquiring 2 JDBC connections;
+    144087 nanoseconds spent releasing 2 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2016-07-19 20:56:03.591 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.threading.ThreadPool - Time taken to execute packet: -125ms
+2016-07-19 20:56:03.709 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 3544
+2016-07-19 20:56:03.799 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.threading.ThreadPool - Time taken to execute packet: -89ms
+2016-07-19 20:56:03.838 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 3544
+2016-07-19 20:56:03.915 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.threading.ThreadPool - Time taken to execute packet: -75ms
+2016-07-19 20:56:04.399 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 3544
+2016-07-19 20:56:04.474 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.threading.ThreadPool - Time taken to execute packet: -75ms
+2016-07-19 20:56:05.276 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 186
+2016-07-19 20:56:05.359 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.threading.ThreadPool - Time taken to execute packet: -82ms
+2016-07-19 20:56:05.402 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 2386
+2016-07-19 20:56:05.422 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 2993
+2016-07-19 20:56:05.524 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.threading.ThreadPool - Time taken to execute packet: -101ms
+2016-07-19 20:56:05.525 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 751
+2016-07-19 20:56:05.877 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 2577
+2016-07-19 20:56:06.201 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 3672
+2016-07-19 20:56:06.264 [pool-4-thread-2] INFO  org.hibernate.engine.internal.StatisticalLoggingSessionEventListener - Session Metrics {
+    194221 nanoseconds spent acquiring 2 JDBC connections;
+    155139 nanoseconds spent releasing 2 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2016-07-19 20:56:06.378 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.threading.ThreadPool - Time taken to execute packet: -177ms
+2016-07-19 20:56:06.379 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1086
+2016-07-19 20:56:11.692 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 20:56:32.238 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 20:56:52.531 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 20:57:13.736 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 20:57:33.958 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 20:57:54.389 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 20:58:14.851 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 20:58:34.881 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 20:58:54.962 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 20:59:15.445 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 20:59:35.471 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 20:59:55.661 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:00:16.016 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:00:36.044 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:00:56.233 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:01:16.570 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:01:36.601 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:01:56.842 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:02:16.874 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:02:36.891 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:02:56.905 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:03:16.955 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:03:36.963 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:03:57.091 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:04:17.121 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:04:37.154 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:04:57.673 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:05:17.704 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:05:37.706 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:05:58.352 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:06:18.371 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:06:38.405 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:06:58.455 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:07:18.489 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:07:38.494 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:07:58.495 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:08:18.541 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:08:38.571 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:08:58.579 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:09:18.621 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:09:38.622 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:09:58.630 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:10:18.659 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:10:38.661 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:10:58.706 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:11:03.122 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1812
+2016-07-19 21:11:18.737 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:11:38.791 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:11:58.833 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:12:18.871 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:12:38.910 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:12:58.955 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:13:18.993 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:13:39.040 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:13:59.071 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:14:19.121 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:14:39.122 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:14:59.162 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:15:19.206 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:15:39.238 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:15:59.248 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:16:19.291 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:16:39.320 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:16:59.370 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:17:19.406 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:17:39.410 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:17:59.412 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:18:19.415 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:18:39.456 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:18:59.489 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:19:19.539 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:19:39.540 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:19:59.571 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:20:19.620 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:20:39.666 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:20:59.704 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:21:19.739 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:21:39.789 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:21:59.821 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:22:19.828 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:22:39.870 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:22:59.872 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:23:19.911 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:23:39.956 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:23:59.956 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:24:19.987 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:24:40.039 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:25:00.247 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:25:20.292 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:25:40.323 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789
+2016-07-19 21:26:00.331 [nioEventLoopGroup-2-3] INFO  org.mdev.revolution.communication.packets.PacketManager - Incoming packet: 1789

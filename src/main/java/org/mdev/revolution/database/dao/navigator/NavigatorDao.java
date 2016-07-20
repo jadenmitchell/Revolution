@@ -10,8 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class NavigatorDao {
-    @Inject
-    GenericJpaDao<FlatCat, Integer> flatCategories;
+    @Inject GenericJpaDao<FlatCat, Integer> flatCategories;
     @Inject GenericJpaDao<PublicRoom, Integer> publicRooms;
 
     @Inject

@@ -4,9 +4,14 @@
              version="2.0">
     <persistence-unit name="org.mdev.revolution.jpa" transaction-type="RESOURCE_LOCAL"> <!-- JTA -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- JPA entity classes -->
         <class>org.mdev.revolution.database.domain.Player</class>
         <class>org.mdev.revolution.database.domain.navigator.FlatCat</class>
         <class>org.mdev.revolution.database.domain.landingview.Promotion</class>
+        <class>org.mdev.revolution.database.domain.rooms.Room</class>
+        <class>org.mdev.revolution.database.domain.rooms.RoomModel</class>
+
         <properties>
             <property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.EmbeddedDriver"/>
 

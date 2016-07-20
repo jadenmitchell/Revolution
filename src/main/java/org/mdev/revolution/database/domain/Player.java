@@ -12,7 +12,7 @@ public class Player implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "mail", unique = true, nullable = false)
+    @Column(name = "mail", unique = true)
     private String email;
 
     @Column(unique = true, nullable = false)
