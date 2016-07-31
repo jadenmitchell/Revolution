@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.mycila.guice.extensions:mycila-guice-jsr250:3.6.ga">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mycila.guice.extensions/mycila-guice-jsr250/3.6.ga/5da8250f191b46790742e96139916fae7563be67/mycila-guice-jsr250-3.6.ga.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mycila.guice.extensions/mycila-guice-jsr250/3.6.ga/e73eac9720d155d27b1b859f18ece0e5684af388/mycila-guice-jsr250-3.6.ga-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

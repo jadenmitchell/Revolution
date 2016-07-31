@@ -70,7 +70,7 @@ public class Session {
                     .getChannel().flush();
 
             sendPacket(new MOTDNotificationComposer(Revolution.getConfig().getOrDefault("motd", DefaultConfig.motd)));
-            playerBean.getAvatar().prepareRoom(1);
+            //playerBean.getAvatar().prepareRoom(1);
             return true;
         }
         catch (Exception e) {

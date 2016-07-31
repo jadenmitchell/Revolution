@@ -6,6 +6,8 @@ import org.mdev.revolution.communication.packets.incoming.ClientPacketHeader;
 import org.mdev.revolution.communication.packets.outgoing.notifications.HabboBroadcastComposer;
 import org.mdev.revolution.network.sessions.Session;
 
+import java.util.Map;
+
 public class SSOTicketEvent {
     public static final String TICKET_DELIMITER = "-";
 

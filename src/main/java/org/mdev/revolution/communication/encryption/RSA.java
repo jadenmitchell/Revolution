@@ -2,12 +2,11 @@ package org.mdev.revolution.communication.encryption;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.mdev.revolution.communication.encryption.delegates.RSAMethod;
 
 import java.math.BigInteger;
 import java.util.Random;
 
-public class RSA {
+class RSA {
     private static final Logger logger = LogManager.getLogger(RSA.class);
 
     private BigInteger n;
@@ -22,7 +21,7 @@ public class RSA {
     protected boolean canDecrypt;
     protected boolean canEncrypt;
 
-    public RSA(BigInteger n, BigInteger e, BigInteger d, BigInteger p, BigInteger q,
+    RSA(BigInteger n, BigInteger e, BigInteger d, BigInteger p, BigInteger q,
                   BigInteger dmp1, BigInteger dmq1, BigInteger coeff) {
         this.n = n;
         this.e = e;
@@ -171,11 +170,16 @@ public class RSA {
         return bytes;
     }
 
-    protected BigInteger doPublic(BigInteger m) {
+    private BigInteger doPublic(BigInteger m) {
         return m.modPow(e, n);
     }
 
-    protected BigInteger doPrivate(BigInteger m) {
+    private BigInteger doPrivate(BigInteger m) {
         return m.modPow(d, n);
+    }
+
+    @FunctionalInterface
+    interface RSAMethod {
+        BigInteger invoke(BigInteger input);
     }
 }

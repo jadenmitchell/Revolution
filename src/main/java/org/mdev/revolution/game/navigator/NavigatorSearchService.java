@@ -14,16 +14,16 @@ public final class NavigatorSearchService {
     private static final HazelcastInstance hzInstance = Hazelcast.newHazelcastInstance();
     private static final Map<String, List<FlatCat>> hCache = hzInstance.getMap("default");
 
-    public static WeakReference<List<FlatCat>> search(String category, String data) {
+    public static WeakReference<List<FlatCat>> search(final String category, String data) {
         List<FlatCat> categories = Lists.newArrayList();
         if (hCache.containsKey(data)) {
             return new WeakReference<>(hCache.get(data));
         }
         if (data.isEmpty()) {
             Revolution.getInstance().getGame().getNavigatorDao().getFlatCategories().forEach((c) -> {
-                if (c.getCategory() == NavigatorCategory.valueOf(category)) {
+                if (c.getCategory() == NavigatorCategory.getValue(category)) {
                     categories.add(c);
-                } else if (c.getCategoryType() == NavigatorCategoryType.valueOf(category)) {
+                } else if (c.getCategoryType() == NavigatorCategoryType.getValue(category)) {
                     categories.add(c);
                 }
             });

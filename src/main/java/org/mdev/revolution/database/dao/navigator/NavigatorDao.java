@@ -1,6 +1,6 @@
 package org.mdev.revolution.database.dao.navigator;
 
-import org.mdev.revolution.database.dao.GenericJpaDao;
+import org.mdev.revolution.database.dao.Dao;
 import org.mdev.revolution.database.domain.navigator.FlatCat;
 import org.mdev.revolution.database.domain.navigator.PublicRoom;
 
@@ -10,8 +10,10 @@ import java.util.Collections;
 import java.util.List;
 
 public class NavigatorDao {
-    @Inject GenericJpaDao<FlatCat, Integer> flatCategories;
-    @Inject GenericJpaDao<PublicRoom, Integer> publicRooms;
+    @Inject
+    Dao<FlatCat, Integer> flatCategories;
+    @Inject
+    Dao<PublicRoom, Integer> publicRooms;
 
     @Inject
     @PostConstruct

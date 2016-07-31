@@ -20,7 +20,7 @@ public class NewNavigatorSearchEvent {
             category = "hotel_view";
         }
 
-        List<FlatCat> results = NavigatorSearchService.search(category, junk).get();
+        List<FlatCat> results = NavigatorSearchService.search(category.toUpperCase(), junk).get();
         session.sendPacket(new SearchResultSet(category, junk, results));
     }
 }

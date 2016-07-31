@@ -14,5 +14,15 @@ public enum NavigatorCategoryType {
     MY_HISTORY_FREQ,
     TOP_PROMOTIONS,
     PROMOTION_CATEGORY,
-    MY_RIGHTS
+    MY_RIGHTS;
+
+
+    public static NavigatorCategoryType getValue(String key) {
+        for (NavigatorCategoryType categoryType : NavigatorCategoryType.values()) {
+            if (categoryType.name().equalsIgnoreCase(key))
+                return categoryType;
+        }
+
+        return null;
+    }
 }

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.netflix.governator:governator-archaius:1.14.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.governator/governator-archaius/1.14.2/c9238d8201f96b8683d822e20d9fbf435d6e12d6/governator-archaius-1.14.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.governator/governator-archaius/1.14.2/4bbad9b2e79109dce4022632b15d35a460fb6c69/governator-archaius-1.14.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

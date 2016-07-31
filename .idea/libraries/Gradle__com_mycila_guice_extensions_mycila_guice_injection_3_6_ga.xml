@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.mycila.guice.extensions:mycila-guice-injection:3.6.ga">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mycila.guice.extensions/mycila-guice-injection/3.6.ga/b829c7b80ac71fc10ea76a144e8b7e776a7d61f2/mycila-guice-injection-3.6.ga.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mycila.guice.extensions/mycila-guice-injection/3.6.ga/f071e428c8a19392c1c1562058f0e06571430ccd/mycila-guice-injection-3.6.ga-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

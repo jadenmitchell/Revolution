@@ -1,5 +1,6 @@
 package org.mdev.revolution.database.domain;
 
+import org.hibernate.annotations.GenericGenerator;
 import org.mdev.revolution.game.players.PlayerGender;
 
 import javax.persistence.*;
@@ -9,7 +10,8 @@ import java.io.Serializable;
 @Table(name = "users")
 public class Player implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
     private int id;
 
     @Column(name = "mail", unique = true)

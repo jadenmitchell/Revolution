@@ -6,6 +6,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
@@ -39,14 +41,14 @@ public class DatabaseManager {
         hikariConfig.addDataSourceProperty("prepStmtCacheSqlLimit", 2048);
         dataSource = new HikariDataSource(hikariConfig);
         setupInitialContext();
-        Configuration configuration = new Configuration().configure();
-        ServiceRegistry serviceRegistry
+        StandardServiceRegistry serviceRegistry
                 = new StandardServiceRegistryBuilder()
                 .applySetting(Environment.DATASOURCE, dataSource)
                 .applySetting(Environment.SESSION_FACTORY_NAME, dataSource.getDataSourceJNDI())
                 .applySetting(Environment.SESSION_FACTORY_NAME_IS_JNDI, "true")
                 .build();
-        sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+        sessionFactory = new MetadataSources(serviceRegistry).buildMetadata().buildSessionFactory();
+        StandardServiceRegistryBuilder.destroy(serviceRegistry);
     }
 
     private void setupInitialContext() {

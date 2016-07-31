@@ -19,5 +19,6 @@ public final class ClientPacketHeader {
     public static final short OpenFlatConnectionMessageEvent = 407;
     public static final short GetGameListMessageEvent = 2993;
     public static final short GetEventCategoriesMessageEvent = 1086;
-
+    public static final short MessengerInitMessageEvent = 2151;
+    public static final short GetFriendRequestsMessageEvent = 2485;
 }
